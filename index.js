@@ -57,6 +57,8 @@ const db_respon_list = JSON.parse(fs.readFileSync('./database/list-message.json'
 
 pp_bot = fs.readFileSync(thumbnail)
 qris = fs.readFileSync(donasi)
+nepoi = fs.readFileSync(neop)
+gipalok = fs.readFileDync(gip)
 lang = global.language 
 moment.tz.setDefault("Asia/Jakarta").locale("id");
 
@@ -179,13 +181,6 @@ autorespond:false,
 }
 } catch (err) {
 console.log(err)
-}
-
-for (let jid of mentionUser) {
-let own = global.ownernomer[jid]
-if (!own) continue
-reply(`Jangan tag dia!
-Dia sedang sibuk`)
 }
 
 
@@ -872,7 +867,7 @@ if (!m.isGroup) return reply(lang.groupOnly())
             }
           }
         ]
-        await alpha.send5ButImg(from, `NIH BRO 😎🤜` , `© ${ownername}`,pp_bot, but , { userJid: m.chat, quoted: m })
+        await alpha.send5ButImg(from, `Tekan Button Url Di Bawah Untuk Link` , `© ${ownername}`,nepoi, but , { userJid: m.chat, quoted: m })
     }
  break
  case 'pwwnye': {
@@ -3861,6 +3856,17 @@ ${prefix}nuliskiri Subscribe Ya https://youtube.com/c/zeeoneofc`)
             }
             break
  default:
+ //anti-tag
+const listTag = [`${global.ownertag}@s.whatsapp.net`]
+const partiNum = (m.mtype === 'extendedTextMessage') ? m.message.extendedTextMessage.contextInfo.participant : ''
+//anti-tag 2
+if (listTag.includes(partiNum)) {
+alpha.send5ButGif(from, `He's Busy Coding`, `© ${ownername}` ,pp_bot, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}}] , {quoted: m})
+}
+//anti-tag 3
+if (budy.includes(`${global.ownertag}`)) {
+alpha.send5ButGif(from, `He's Busy Coding`, `© ${ownername}` ,pp_bot, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}}] , {quoted: m})
+}
 if (budy.startsWith('=>')) {
 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
 function Return(sul) {

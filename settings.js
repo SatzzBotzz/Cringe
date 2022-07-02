@@ -26,7 +26,7 @@ global.language = english  //change indonesia to english if you don't understand
 
 // Other
 global.botname = "Hinata-Mdོ" //namabot kalian
-global.ownername= "ᴹᴿ᭄ SatganzDevsོ ×፝֟͜×" //nama kalian
+global.ownername= " SatganzDevsོ ×፝֟͜×" //nama kalian
 global.myweb ="https://satganzresapi.herokuapp.com" //bebas asal jan hapus
 global.youtube = "https://youtube.com/channel/UCds9j7uCwYoRoXFd1syKQmQ" //bebas asal jan hapus
 global.github = "https://github.com/SatzzBotzz" //bebas
@@ -36,8 +36,11 @@ global.timezone = 'Asia/Jakarta' //  timezone wib
 global.owner = ["6282398383300","6281316701742","6281266891985"] //ganti agar fitur owner bisa di gunakan
 global.ownernomer = "6281316701742" // nomor wa kalian
 global.ownernomerr = "+6281316701742" //nmr wa kalian
+global.ownertag = ['6281316701742']
 global.thumbnail = "./image/lol.jpg" // ini lol.jpg adalah nama foto di folder image. untuk foto bot
 global.donasi = "./image/donasi.jpg" // foto donasi di folder image
+global.neop = "./image/nekopoi.jpg"
+global.gip = "./image/hinata.gif"
 global.background_welcome="https://telegra.ph/file/90a931648de597820bc08.jpg" // maks size 30kb, agar welcome image nya tdk delay
 
 global.packname = '© Hinata-Mdོ' //sticker wm ubah
