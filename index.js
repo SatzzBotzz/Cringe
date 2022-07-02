@@ -182,6 +182,14 @@ console.log(err)
 }
 
 for (let jid of mentionUser) {
+let own = global.ownernomer[jid]
+if (!own) continue
+reply(`Jangan tag dia!
+Dia sedang sibuk`)
+}
+
+
+for (let jid of mentionUser) {
 let user = global.db.data.users[jid]
 if (!user) continue
 let afkTime = user.afkTime
@@ -864,7 +872,7 @@ if (!m.isGroup) return reply(lang.groupOnly())
             }
           }
         ]
-        await alpha.send5ButImg(from, lang.tos(ownernomer) , `© ${ownername}`,qris, but , { userJid: m.chat, quoted: m })
+        await alpha.send5ButImg(from, `NIH BRO 😎🤜` , `© ${ownername}`,pp_bot, but , { userJid: m.chat, quoted: m })
     }
  break
  case 'pwwnye': {
