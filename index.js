@@ -3855,17 +3855,85 @@ ${prefix}nuliskiri Subscribe Ya https://youtube.com/c/zeeoneofc`)
                 })
             }
             break
+            //StatusOwner\\
+            case 'ownerstat':
+            alpha.sendList(from, `Info Owner`, `© ${ownername}`, salam + ' ' +  pushname, 'Click Here', [
+							{"title": "Social Media","rows": [{"title": "Github","rowId": "Github SatganzDevs","Id": "mygithub"},{"title": "You Tube","rowId": "You Tube SatganzDevs","Id": "myweb"},{"title": "You Tube","rowId": "IInstagram SatganzDevs","Id": "myig"}]
+							}], {quoted:fgif})
+//My My an dulu🗿
+case "myweb": {
+var but = [
+				{
+					"urlButton": {
+						"displayText": "You Tube",
+						"url": `${global.youtube}`
+                 }
+                }
+				]
+				await alpha.send5ButLoc(from, `Don't Forget To Subscribe Son!` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+}
+break
+case "mygithub": {
+var but = [
+				{
+					"urlButton": {
+						"displayText": "Github",
+						"url": `${global.github}`
+                 }
+                }
+				]
+				await alpha.send5ButLoc(from, `Don't Forget To Follow Son!` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+}
+break
+case "myig": {
+var but = [
+				{
+					"urlButton": {
+						"displayText": "Instagram",
+						"url": `${global.ig}`
+                 }
+                }
+				]
+				await alpha.send5ButLoc(from, `Don't Forget To Follow Son!` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+}
+break
  default:
- //anti-tag
+ //anti-tag by SatganzDevs
 const listTag = [`${global.ownertag}@s.whatsapp.net`]
 const partiNum = (m.mtype === 'extendedTextMessage') ? m.message.extendedTextMessage.contextInfo.participant : ''
-//anti-tag 2
+//anti-tag 2 by SatganzDevs
 if (listTag.includes(partiNum)) {
-alpha.send5ButGif(from, `He's Busy Coding`, `© ${ownername}` ,pp_bot, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}}] , {quoted: m})
+var but = [
+				{
+					"urlButton": {
+						"displayText": "Website",
+						"url": `${myweb}`
+						}
+				},{
+                    "quickReplyButton": {
+                        "displayText": "Biodata Owner",
+                       "id": 'ownerstat'
+                 }
+                }
+				]
+				await alpha.send5ButLoc(from, `Don't Tag Him He's Busy` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
 }
-//anti-tag 3
+//anti-tag 3 by SatganzDevs
 if (budy.includes(`${global.ownertag}`)) {
-alpha.send5ButGif(from, `He's Busy Coding`, `© ${ownername}` ,pp_bot, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}}] , {quoted: m})
+var but = [
+				{
+					"urlButton": {
+						"displayText": "Website",
+						"url": `${myweb}`
+						}
+				},{
+                    "quickReplyButton": {
+                        "displayText": "Biodata Owner",
+                       "id": 'ownerstat'
+                 }
+                }
+				]
+				await alpha.send5ButLoc(from, `Don't Tag Him He's Busy` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
 }
 if (budy.startsWith('=>')) {
 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
