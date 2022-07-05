@@ -1203,7 +1203,7 @@ reply(lang.ok())
 }
 break
             case 'join': {
-                if (!isCreator) return reply(lang.ownerOnly())
+                if (!isCreator && isPremium) return reply(lang.ownerOnly())
                 if (!text) return reply(lang.JoinGc())
                 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return reply(lang.erorLink())
                 reply(lang.wait())
@@ -3897,43 +3897,21 @@ var but = [
 				await alpha.send5ButLoc(from, `Don't Forget To Follow Son!` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
 }
 break
+case 'tutro': {
+	reply(`njirr🗿`)
+	}
+	break
  default:
  //anti-tag by SatganzDevs
 const listTag = [`${global.ownertag}@s.whatsapp.net`]
 const partiNum = (m.mtype === 'extendedTextMessage') ? m.message.extendedTextMessage.contextInfo.participant : ''
 //anti-tag 2 by SatganzDevs
 if (listTag.includes(partiNum)) {
-var but = [
-				{
-					"urlButton": {
-						"displayText": "Website",
-						"url": `${myweb}`
-						}
-				},{
-                    "quickReplyButton": {
-                        "displayText": "Biodata Owner",
-                       "id": 'ownerstat'
-                 }
-                }
-				]
-				await alpha.send5ButLoc(from, `Don't Tag Him He's Busy` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+alpha.sendButMessage(from, 'Sok Asik Lu Tag Tag Owner Gwejh', `© ${ownername}`, [{buttonId: 'Oke', buttonText: {displayText: 'Oke'}, type: 1},{buttonId: 'tutro', buttonText: {displayText: '                                          aku gay'}, type: 1}], {quoted: fgif})
 }
 //anti-tag 3 by SatganzDevs
 if (budy.includes(`${global.ownertag}`)) {
-var but = [
-				{
-					"urlButton": {
-						"displayText": "Website",
-						"url": `${myweb}`
-						}
-				},{
-                    "quickReplyButton": {
-                        "displayText": "Biodata Owner",
-                       "id": 'ownerstat'
-                 }
-                }
-				]
-				await alpha.send5ButLoc(from, `Don't Tag Him He's Busy` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+				alpha.sendButMessage(from, 'Sok Asik Lu Tag Tag Owner Gwejh', `© ${ownername}`, [{buttonId: 'Oke', buttonText: {displayText: 'Oke'}, type: 1},{buttonId: 'tutro', buttonText: {displayText: '                                          aku gay'}, type: 1}], {quoted: fgif})
 }
 if (budy.startsWith('=>')) {
 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
