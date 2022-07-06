@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/SatzzBotzz/Cringe/blob/v7.1/image/lol_1.jpg" alt="AYANE SHIRAKAWA" width="100"/>
+<img src="https://github.com/SatzzBotzz/Cringe/blob/master/image/lol.jpg" alt="AYANE SHIRAKAWA" width="100"/>
 
 
 </p>
