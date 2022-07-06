@@ -25,15 +25,16 @@ global.language = english  //change indonesia to english if you don't understand
 
 
 // Other
-global.botname = "Hinata-Mdོ" //namabot kalian
+global.botname = "𝘼𝙔𝘼𝙉𝙀 𝙎𝙃𝙄𝙍𝘼𝙆𝘼𝙒𝘼-𝙈𝘿ོ" //namabot kalian
 global.ownername= " SatganzDevsོ ×፝֟͜×" //nama kalian
 global.myweb ="https://satganzresapi.herokuapp.com" //bebas asal jan hapus
 global.youtube = "https://youtube.com/channel/UCds9j7uCwYoRoXFd1syKQmQ" //bebas asal jan hapus
 global.github = "https://github.com/SatzzBotzz" //bebas
+global.ig = "https://instagram.com/kurniawansatria_24"
 global.email = "satganzdevs@gmail.com" //bebas
 global.region = "Indonesia" //bebas
 global.timezone = 'Asia/Jakarta' //  timezone wib
-global.owner = ["6282398383300","6281316701742","6281266891985"] //ganti agar fitur owner bisa di gunakan
+global.owner = ["6281316701742"] //ganti agar fitur owner bisa di gunakan
 global.ownernomer = "6281316701742" // nomor wa kalian
 global.ownernomerr = "+6281316701742" //nmr wa kalian
 global.ownertag = ['6281316701742']
@@ -43,7 +44,7 @@ global.neop = "./image/nekopoi.jpg"
 global.gip = "./image/hinata.gif"
 global.background_welcome="https://telegra.ph/file/90a931648de597820bc08.jpg" // maks size 30kb, agar welcome image nya tdk delay
 
-global.packname = '© Hinata-Mdོ' //sticker wm ubah
+global.packname = '© Ayane Shirakawa-Mdོ' //sticker wm ubah
 global.author = 'Created By Satganz Devs' //sticker wm ganti nama kalian
 global.sessionName = 'session'
 global.typemenu = 'document'
@@ -63,7 +64,7 @@ global.mess = {
     private: 'Perintah Ini Hanya Bisa Digunakan Di Private !',
 	bot: 'Fitur Khusus Pengguna Nomor Bot',
     errtoimg: 'Maaf Saat Ini Belum Support Sticker Gif !',
-    wait: '⏳ Sedang Di Proses',
+    wait: '⏳ Wait...',
 	lockCmd: 'Fitur Tidak Diaktifkan Oleh Owner!',
 	example1: 'Selamat Datang @user Di Group @subject Jangan Lupa Baca Rules @desc\n\nNote :\n1. @user (Mention User Join)\n2. @bio (Get Bio User Join)\n3. @tanggal (Date Now)\n4. @desc (Get Description Group)\n5. @subject (Group Name)'
 }
