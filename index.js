@@ -3882,26 +3882,22 @@ const listTag = [`${global.ownertag}@s.whatsapp.net`]
 const partiNum = (m.mtype === 'extendedTextMessage') ? m.message.extendedTextMessage.contextInfo.participant : ''
 //anti-tag 2 by SatganzDevs
 if (listTag.includes(partiNum)) {
-alpha.sendButMessage(from, `Don't Tag My Owner Bro 🗿`, `© ${ownername}`, [{buttonId: 'Oke', buttonText: {displayText: 'Oke'}, type: 1},{buttonId: 'tutro', buttonText: {displayText: '                                          
-aku gay'}, type: 1}], {quoted: fgif})
+alpha.sendButMessage(from, `Don't Tag My Owner Bro 🗿`, `© ${ownername}`, [{buttonId: 'Oke', buttonText: {displayText: 'Oke'}, type: 1},{buttonId: 'tutro', buttonText: {displayText: '                                          aku gay'}, type: 1}], {quoted: fgif})
 }
 //anti-tag 3 by SatganzDevs
 if (budy.includes(`${global.ownertag}`)) {
-				alpha.sendButMessage(from, `Don't Tag My Owner Bro 🗿`, `© ${ownername}`, [{buttonId: 'Oke', buttonText: {displayText: 'Oke'}, type: 1},{buttonId: 'tutro', buttonText: {displayText: 'ㅤ   ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-aku gay'}, type: 1}], {quoted: fgif})
+				alpha.sendButMessage(from, `Don't Tag My Owner Bro 🗿`, `© ${ownername}`, [{buttonId: 'Oke', buttonText: {displayText: 'Oke'}, type: 1},{buttonId: 'tutro', buttonText: {displayText: 'ㅤ   ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤaku gay'}, type: 1}], {quoted: fgif})
 }
 /*𝙰𝚗𝚝𝚒 𝚝𝚊𝚐 𝙱𝚘𝚝 𝚋𝚢 𝚜𝚊𝚝𝚐𝚊𝚗𝚣𝙳𝚎𝚟𝚜*/
 const listoTag = [`6281268248904@s.whatsapp.net`]
 const partioNum = (m.mtype === 'extendedTextMessage') ? m.message.extendedTextMessage.contextInfo.participant : ''
 //anti-tag 2 by SatganzDevs
 if (listTag.includes(partioNum)) {
-alpha.sendButMessage(from, 'Sok Asik Lu Tag Tag  Gwejh', `© ${ownername}`, [{buttonId: 'menu', buttonText: {displayText: 'MENU'}, type: 1},{buttonId: 'tutro', buttonText: {displayText: 'ㅤ   ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-aku gay'}, type: 1}], {quoted: fgif})
+alpha.sendButMessage(from, 'Sok Asik Lu Tag Tag  Gwejh', `© ${ownername}`, [{buttonId: 'menu', buttonText: {displayText: 'MENU'}, type: 1},{buttonId: 'tutro', buttonText: {displayText: 'ㅤ   ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤaku gay'}, type: 1}], {quoted: fgif})
 }
 //anti-tag 3 by SatganzDevs
 if (budy.includes(`6281268248904`)) {
-				alpha.sendButMessage(from, 'Sok Asik Lu Tag Tag  Gwejh', `© ${ownername}`, [{buttonId: 'menu', buttonText: {displayText: 'MENU'}, type: 1},{buttonId: 'tutro', buttonText: {displayText: '                                          
-aku gay'}, type: 1}], {quoted: fgif})
+				alpha.sendButMessage(from, 'Sok Asik Lu Tag Tag  Gwejh', `© ${ownername}`, [{buttonId: 'menu', buttonText: {displayText: 'MENU'}, type: 1},{buttonId: 'tutro', buttonText: {displayText: '                                          aku gay'}, type: 1}], {quoted: fgif})
 }
 /* ===== ANTI TOXIC ===== */
 const SatganzToxic = ["ontol","konto","anjg","njing","bgsd","bangsat","bangsad","jingan","tolol","ngento","ngntd","asu","asw","memek","mmek","babi","tai","goblok","gblk","kimak"]
