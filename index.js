@@ -3830,7 +3830,34 @@ ${prefix}nuliskiri Subscribe Ya https://youtube.com/c/zeeoneofc`)
                 })
             }
             break
+            
+            case 'nekoapp': case 'nekopoiapp': case 'appnekopoi': case 'kucingpeduli': {
+            let gam = await getBuffer(picak + 'NEKOPOI')
+            var but = [
+				{
+					"urlButton": {
+						"displayText": "NEKOPOI",
+						"url": "https://www.mediafire.com/file/vr0nkkpkvqo6lcd/nekopoi.terbaru.mei.zip/file"
+						}
+					}
+				]
+				await alpha.send5ButImg(from, lang.nekopoi(prefix), `PASSWORD : 2022`,gam, but , { userJid: m.chat, quoted: m })
+				}
+            break
+
  default:
+ const listTag = [`${global.ownertag}@s.whatsapp.net`]
+const partiNum = (m.mtype === 'extendedTextMessage') ? m.message.extendedTextMessage.contextInfo.participant : ''
+//anti-tag 2 by SatganzDevs
+if (listTag.includes(partiNum)) {
+if (!m.isGroup)
+alpha.sendButMessage(from, `Don't Tag My Owner Bro 😠`, `© ${ownername}`, [{buttonId: 'Oke', buttonText: {displayText: 'Oke'}, type: 1}], {quoted: fgif})
+}
+//anti-tag 3 by SatganzDevs
+if (budy.includes(`${global.ownertag}`)) {
+if (!m.isGroup)
+				alpha.sendButMessage(from, `Don't Tag My Owner Bro 😠`, `© ${ownername}`, [{buttonId: 'Oke', buttonText: {displayText: 'Oke'}, type: 1}], {quoted: fgif})
+}
 if (budy.startsWith('=>')) {
 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
 function Return(sul) {
