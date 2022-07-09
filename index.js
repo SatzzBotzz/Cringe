@@ -57,8 +57,6 @@ const db_respon_list = JSON.parse(fs.readFileSync('./database/list-message.json'
 
 pp_bot = fs.readFileSync(thumbnail)
 qris = fs.readFileSync(donasi)
-nepoi = fs.readFileSync(neop)
-gipalok = fs.readFileSync(gip)
 lang = global.language 
 moment.tz.setDefault("Asia/Jakarta").locale("id");
 
@@ -182,7 +180,6 @@ autorespond:false,
 } catch (err) {
 console.log(err)
 }
-
 
 for (let jid of mentionUser) {
 let user = global.db.data.users[jid]
@@ -851,29 +848,7 @@ if (!m.isGroup) return reply(lang.groupOnly())
         await alpha.send5ButImg(from, lang.tos(ownernomer) , `© ${ownername}`,qris, but , { userJid: m.chat, quoted: m })
     }
  break
- //nekopoi function\\    
- case 'nekopoi':case 'nekoapp':case 'nekopoiapp':case 'kucingpeduli': {
- var but = [
-          {
-            "urlButton": {
-              "displayText": "MediaFire",
-              "url": "https://www.mediafire.com/file/vr0nkkpkvqo6lcd/nekopoi.terbaru.mei.zip/file"
-            }
-          },
-          {
-            "quickReplyButton": {
-              "displayText": "Get Passwords",
-"id": 'pwwnye'
-            }
-          }
-        ]
-        await alpha.send5ButImg(from, `Tekan Button Url Di Bawah Untuk Link` , `© ${ownername}`,nepoi, but , { userJid: m.chat, quoted: m })
-    }
- break
- case 'pwwnye': {
- reply(`PASSWORDS : 2022`)
- }
-break
+      
 //Random Anime
 				case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite':case 'yeet':case 'neko':case 'bully':case 'bonk':case 'wink':case 'poke':case 'nom':case 'slap':case 'smile':case 'wave':case 'awoo':case 'blush':case 'smug':case 'glomp':case 'happy':case 'dance':case 'cringe':case 'highfive':case 'shinobu':case 'megumin':case 'handhold':
 					reply(lang.wait())
@@ -1203,7 +1178,7 @@ reply(lang.ok())
 }
 break
             case 'join': {
-                if (!isCreator && isPremium) return reply(lang.ownerOnly())
+                if (!isCreator) return reply(lang.ownerOnly())
                 if (!text) return reply(lang.JoinGc())
                 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return reply(lang.erorLink())
                 reply(lang.wait())
@@ -1585,7 +1560,7 @@ const buttojns = [
 						await alpha.send5ButLoc(from, lang.menunya(salam, pushname, botname) , `© ${ownername}`,pp_bot, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "List Command","id": 'command'}}], { userJid: m.chat, quoted: m } )
 							}
 						if(typemenu == 'templateTenor'){
-							alpha.send5ButGif(from, lang.menunya(salam, pushname, botname) , `© ${ownername}` ,gipalok, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "List Command","id": 'command'}}] , {quoted: m})
+							alpha.send5ButGif(from, lang.menunya(salam, pushname, botname) , `© ${ownername}` ,pp_bot, [{"urlButton": {"displayText": "YouTube Creator","url": `${youtube}`}},{"urlButton": {"displayText": "Rest Api's","url": `${myweb}`}},{"quickReplyButton": {"displayText": "Donasi","id": 'donate'}},{"quickReplyButton": {"displayText": "Owner","id": 'owner'}},{"quickReplyButton": {"displayText": "List Command","id": 'command'}}] , {quoted: m})
 						 }
 						if(typemenu == 'katalog'){
 							alpha.sendKatalog(m.chat, "ALL MENU BOT", lang.listMenu(time, salam, pushname, prefix), pp_bot, {quoted:m})
@@ -1603,117 +1578,117 @@ const buttojns = [
 		}
 	break   
 	case 'infocmd': case'infomenu':{
-		alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.info(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+		alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.info(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
       }
   break 
   case 'storecmd': case'storemenu':{
-		alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.storemenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+		alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.storemenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
       }
   break 
   case 'anoncmd': case'anonmenu':{
-		alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.anonchat(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+		alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.anonchat(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
       }
   break 
 	case 'ownercmd': case'ownermenu':{
-		alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.ownermenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+		alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.ownermenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
       }
   break 
   case 'databasecmd': case'databasemenu':{
-		alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.database(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+		alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.database(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
       }
   break 
   case 'groupcmd': case 'groupmenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.group(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.group(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
         break       
     case 'animecmd': case 'animemenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.anime(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.anime(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
          break 
             case 'tagcmd': case 'tagmenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.tag(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.tag(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
          break 
         case 'stalkcmd': case 'stalkmenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.stalk(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.stalk(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
          break         
         case 'searchcmd': case 'searchmenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.search(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.search(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
        }
   break 
         case 'convertercmd': case 'convertmenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.converter(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.converter(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
          break 
         case 'stickercmd': case 'stickermenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.effect(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.effect(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
          break 
         case 'stickercmd2': case 'stickermenu2':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.effect2(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.effect2(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
          break 
         case 'downloadercmd': case 'downloadmenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.download(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.download(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
          break 
         case 'ranimecmd': case 'animemenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.ranime(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.ranime(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
         break 
         case 'nsfwcmd': case 'nsfwcommand':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.nsfw(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.nsfw(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
         }
 break 
 case 'textprocmd': case 'textpromenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.textpro(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.textpro(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
         break 
         case 'othercmd': case 'othermenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.other(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.other(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
         break 
         case 'gamecmd': case 'gamemenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.game(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.game(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
          break 
          case 'soundcmd': case 'soundmenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.soundmenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.soundmenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
          break 
          case 'logocmd': case 'logomenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.logomenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.logomenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
          break 
          case 'islamcmd': case 'islammenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.islammenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.islammenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
          break 
         case 'asupancmd': case 'asupanmenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.asupan(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.asupan(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
         break 
         case 'cecancmd': case 'cecanmenu':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.cecan(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.cecan(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
 }
         break 
         case 'primbonmenu': case 'primboncmd':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.primbonmenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.primbonmenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
         }
 break 
         case 'telestc': case 'telecmd':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.stcmenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.stcmenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
         }
 break 
 case 'ephotomenu': case 'ephotocmd':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.ephotomenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.ephotomenu(prefix), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
         }
 break 
 case 'thanksto': case 'tqto':{
- alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'groupbot',buttonText: {displayText:'Group Bot ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.tqto(), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
+ alpha.sendButImage(m.chat, sender, [{buttonId: '.command',buttonText:{displayText: '༺ Back'},type: 1},{buttonId:'owner',buttonText: {displayText:'Owner ༻'}, type: 1}], `Selamat ${salam} @${sender.split('@')[0]} 😊\n\n╭─⬣「 _*INFO BOT*_ 」⬣\n│ *Prefix* :  ${prefix} \n│ *Name* : ${botname}\n│ *Owner* : @${ownernomer.split("@")[0]}\n│ *Mode* : ${alpha.public ? 'Public-Mode' : 'Self-Mode'}\n│ *Runtime* : ${runtime(process.uptime())}\n│ *Lib* : Baileys-Md@4.0.0\n╰─⬣` + '\n\n' +  lang.tqto(), `© ${ownername}`, [sender, ownernomer + '@s.whatsapp.net'], {quoted:m})
          }
-break   
+break 
 case 'take':case 'wm':{
 if (!quoted) return reply(lang.NoToStik(prefix, command))
 if (!text) return reply(lang.NoWm(prefix, command))
@@ -1743,10 +1718,6 @@ reply(lang.DoneExif(global.packname, global.author))
 }
 
 break
-case 'groupbot': {
-	await alpha.send5ButLoc(from, `Hai kak ${pushname} 👋, saya *${botname}* ` + '\n\n' + (time, salam, pushname, prefix) , `© ${ownername}`,pp_bot, [{"urlButton": {"displayText": "Hentai Group","url": 'https://chat.whatsapp.com/KXRsI1KjhGF9MkAmw1mmOX'}},{"urlButton": {"displayText": "Transaction Group","url": 'https://chat.whatsapp.com/E2o6zHNgIVdLK1wE0vtlq1'}},{"urlButton": {"displayText": "Group Bot","url": 'https://chat.whatsapp.com/LojZCGWIuMsHvLx6Vf89BI'}}] )
-		}                          
-	break   
 			case 'nomerhoki': case 'nomorhoki': {
                 if (!Number(text)) throw `Example : ${prefix + command} 887435047326`
                 let anu = await primbon.nomer_hoki(Number(text))
@@ -3745,7 +3716,7 @@ case 'google': {
 4. ${prefix}foliokanan
 
 Contoh:
-${prefix}nuliskiri Subscribe Ya https://youtube.com/channel/UCds9j7uCwYoRoXFd1syKQmQ`)
+${prefix}nuliskiri Subscribe Ya https://youtube.com/c/zeeoneofc`)
             break
         case 'nuliskiri': {
             if (text.length < 2) return reply(lang.KisahNabi(prefix, command, 'Support Bot WhatsApp'))
@@ -3859,42 +3830,7 @@ ${prefix}nuliskiri Subscribe Ya https://youtube.com/channel/UCds9j7uCwYoRoXFd1sy
                 })
             }
             break
-         
-case 'tutro': {
-	reply(`njirr🗿`)
-	}
-	break
-	
-	case 'chatorang':case 'chatorg': case 'confens': case 'sampaikanpesan': case 'pesan': case 'chatto': {
-		if (!text) return reply(lang.Chatto(prefix, command))
-	if (!text.includes('|')) return reply(lang.Chatto(prefix, command))
-orangnya = args.join(' ')
-chat1 = arg.split('|')[0]
-chat2 = arg.split('|')[1]
-themess =`${chat1} ${chat2}`
-chatnyaa =`${themess} \n Message From : ${pushname} Number : ${m.sender.split('@')[0]}`
-reply(chatnyaa)
-}
-break 
  default:
- //anti-tag by SatganzDevs
-const listTag = [`${global.ownertag}@s.whatsapp.net`]
-const partiNum = (m.mtype === 'extendedTextMessage') ? m.message.extendedTextMessage.contextInfo.participant : ''
-//anti-tag 2 by SatganzDevs
-if (listTag.includes(partiNum)) {
-alpha.sendButMessage(from, `Don't Tag My Owner Bro 🗿`, `© ${ownername}`, [{buttonId: 'Oke', buttonText: {displayText: 'Oke'}, type: 1}], {quoted: fgif})
-}
-//anti-tag 3 by SatganzDevs
-if (budy.includes(`${global.ownertag}`)) {
-				alpha.sendButMessage(from, `Don't Tag My Owner Bro 🗿`, `© ${ownername}`, [{buttonId: 'Oke', buttonText: {displayText: 'Oke'}, type: 1}], {quoted: fgif})
-}
-/* ===== ANTI TOXIC ===== */
-	const SaTiR = ['beliau','gwejh','afa','iyah','Apabila','alibapA','anjime','kenafa','afaan','😅☝','kocak geming','banh','deck','tua']
-	if (SaTiR.indcludes(body)) {
-	let SatganzDevs = ['perbaiki satirmu😏☝','yang bener...','cah satir','ketar ketir','🗿☝','iyain','🥶']
-	let SatriaGanz = SatganzDevs[Math.floor(Math.random() * SatganzDevs.length)]
-	reply(SatriaGanz)
-	}
 if (budy.startsWith('=>')) {
 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
 function Return(sul) {
