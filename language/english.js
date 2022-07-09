@@ -1492,6 +1492,18 @@ If you understand the rules, please type *${prefix}menu* to start!
 Thank you! 
 `
 }
+exports.nekopoi = (prefix) => {
+    return `
+*── 「 NEKOPOI APP 」 ──*
+
+1. Click Url Button To Get Link
+2. Password : 2022
+3. Don't Forget Worship
+
+
+Thank you! 
+`
+}
 exports.welcome = () =>{
 	return`Don't forget the introduction sis 🤗
 	
@@ -1509,7 +1521,7 @@ exports.source = () =>{
 return`*------「 SOURCE CODE 」 ------*
 
 Base : https://github.com/DikaArdnt/Hisoka-Morou
-Recode : https://youtube.com/playlist?list=PLFCglBzFPHG7vSQaa9S3P8yfla_d9w-2-
+Recode : https://github.com/SatzzBotzz/KONTOL
 `
 }
 exports.tos = (ownernomer) => {
