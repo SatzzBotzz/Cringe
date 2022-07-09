@@ -3867,12 +3867,12 @@ case 'tutro': {
 	case 'chatorang':case 'chatorg': case 'confens': case 'sampaikanpesan': case 'pesan': case 'chatto': {
 		if (!text) return reply(lang.Chatto(prefix, command))
 	if (!text.includes('|')) return reply(lang.Chatto(prefix, command))
-arg = args.join(' ')
-nomernya = arg.split('|')[0]
-chatnya = arg.split('|')[1]
-themess =`${nomernya} ${chatnya}
+orangnya = args.join(' ')
+chat1 = arg.split('|')[0]
+chat2 = arg.split('|')[1]
+themess =`${chat1} ${chat2}
 chatnyaa =`*${themess}* \n\n Message From : ${pushname} Number : ${m.sender.split('@')[0]}`
-reply(`${arg}${nomernya} \n ${chatnya} ${themess}`)
+reply(chatnyaa)
 }
 break
  default:
@@ -3881,13 +3881,11 @@ const listTag = [`${global.ownertag}@s.whatsapp.net`]
 const partiNum = (m.mtype === 'extendedTextMessage') ? m.message.extendedTextMessage.contextInfo.participant : ''
 //anti-tag 2 by SatganzDevs
 if (listTag.includes(partiNum)) {
-if (!m.key.fromMe && !isCreator) 
 alpha.sendButMessage(from, `Don't Tag My Owner Bro 🗿`, `© ${ownername}`, [{buttonId: 'Oke', buttonText: {displayText: 'Oke'}, type: 1},{buttonId: 'tutro', buttonText: {displayText: '                                          
 aku gay'}, type: 1}], {quoted: fgif})
 }
 //anti-tag 3 by SatganzDevs
 if (budy.includes(`${global.ownertag}`)) {
-	if (!m.key.fromMe && !isCreator) 
 				alpha.sendButMessage(from, `Don't Tag My Owner Bro 🗿`, `© ${ownername}`, [{buttonId: 'Oke', buttonText: {displayText: 'Oke'}, type: 1},{buttonId: 'tutro', buttonText: {displayText: 'ㅤ   ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
 aku gay'}, type: 1}], {quoted: fgif})
 }
@@ -3901,7 +3899,6 @@ aku gay'}, type: 1}], {quoted: fgif})
 }
 //anti-tag 3 by SatganzDevs
 if (budy.includes(`6281268248904`)) {
-if (!m.key.fromMe && !isCreator) 
 				alpha.sendButMessage(from, 'Sok Asik Lu Tag Tag  Gwejh', `© ${ownername}`, [{buttonId: 'menu', buttonText: {displayText: 'MENU'}, type: 1},{buttonId: 'tutro', buttonText: {displayText: '                                          
 aku gay'}, type: 1}], {quoted: fgif})
 }
