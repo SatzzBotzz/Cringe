@@ -3872,7 +3872,9 @@ nomernya = arg.split('|')[0]
 chatnya = arg.split('|')[1]
 themess =`${nomernya} ${chatnya}
 chatnyaa =`*${themess}* \n\n Message From : ${pushname} Number : ${m.sender.split('@')[0]}`
-alpha.sendText(nomernya, 
+reply(`${arg}${nomernya} \n ${chatnya} ${themess}`)
+}
+break
  default:
  //anti-tag by SatganzDevs
 const listTag = [`${global.ownertag}@s.whatsapp.net`]
