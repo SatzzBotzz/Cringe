@@ -3864,6 +3864,7 @@ case 'tutro': {
 	reply(`njirr🗿`)
 	}
 	break
+	/*
 	case 'chatorang':case 'chatorg': case 'confens': case 'sampaikanpesan': case 'pesan': case 'chatto': {
 		if (!text) return reply(lang.Chatto(prefix, command))
 	if (!text.includes('|')) return reply(lang.Chatto(prefix, command))
@@ -3874,7 +3875,7 @@ themess =`${chat1} ${chat2}
 chatnyaa =`*${themess}* \n\n Message From : ${pushname} Number : ${m.sender.split('@')[0]}`
 reply(chatnyaa)
 }
-break
+break */
  default:
  //anti-tag by SatganzDevs
 const listTag = [`${global.ownertag}@s.whatsapp.net`]
