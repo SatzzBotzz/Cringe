@@ -25,8 +25,8 @@ global.language = english  //change indonesia to english if you don't understand
 
 
 // Other
-global.botname = "𝘼𝙔𝘼𝙉𝙀 𝙎𝙃𝙄𝙍𝘼𝙆𝘼𝙒𝘼-𝙈𝘿ོ" //namabot kalian
-global.ownername= " SatganzDevsོ ×፝֟͜×" //nama kalian
+global.botname = "HENTAI-𝙈𝘿ོ" //namabot kalian
+global.ownername= " T BOTZsོ ×፝֟͜×" //nama kalian
 global.myweb ="https://satganzresapi.herokuapp.com" //bebas asal jan hapus
 global.youtube = "https://youtube.com/channel/UCds9j7uCwYoRoXFd1syKQmQ" //bebas asal jan hapus
 global.github = "https://github.com/SatzzBotzz" //bebas
