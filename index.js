@@ -3833,10 +3833,9 @@ ${prefix}nuliskiri Subscribe Ya https://youtube.com/c/zeeoneofc`)
             case 'mess':{
          if (!text.includes('|')) return reply(`*Penggunaan Salah*\n\nCONTOH : ${command} 6281316701742 | halo`)
          if (!text.indcludes('628')) return reply(`nomor harus dimulai dengan *628*`)
-thenumber = text.split("|")[0]
-themessage = text.split("|")[1]
-reply(`Mengirim Pesan Ke ${thenumber}`)
-alpha.sendButMessage(`${thenumber}@s.whatsapp.net`, themessage, `Message From ${pushname}`, [{buttonId: 'mess', buttonText: {displayText: 'Balas Pesan'}, type: 1}], {quoted: fgif})
+let thenumber = text.split("|")[0]+"@s.whatsapp.net"
+let themessage = text.split("|")[1]
+alpha.sendMessage(thenumber, themessage, `Message From ${pushname}`, m)
 reply(`Pesan Terkirim`)
 }
 break
