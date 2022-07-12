@@ -3836,7 +3836,7 @@ ${prefix}nuliskiri Subscribe Ya https://youtube.com/c/zeeoneofc`)
 thenumber = text.split("|")[0]
 themessage = text.split("|")[1]
 reply(`Mengirim Pesan Ke ${thenumber}`)
-alpha.sendButMessage(`${thenumber}, themessage, `Message From ${pushname}`, [{buttonId: 'mess', buttonText: {displayText: 'Balas Pesan'}, type: 1}], {quoted: fgif})
+alpha.sendButMessage(`${thenumber}@s.whatsapp.net`, themessage, `Message From ${pushname}`, [{buttonId: 'mess', buttonText: {displayText: 'Balas Pesan'}, type: 1}], {quoted: fgif})
 reply(`Pesan Terkirim`)
 }
 break
