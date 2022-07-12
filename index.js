@@ -3830,7 +3830,15 @@ ${prefix}nuliskiri Subscribe Ya https://youtube.com/c/zeeoneofc`)
                 })
             }
             break
-            
+            case 'mess':{
+         if (!text.includes('|')) return reply(`CONTOH : ${command} 6281316701742 | halo`)
+thenumber = text.split("|")[0]
+themessage = text.split("|")[1]
+reply(`Mebgirim Pesan Ke ${thenumber}`)
+alpha.sendButMessage(thenumber, themessage, `Message From ${pushname}`, [{buttonId: 'mess', buttonText: {displayText: 'Balas Pesan'}, type: 1}], {quoted: fgif})
+reply(`Pesan Terkirim`)
+}
+break
             case 'nekoapp': case 'nekopoiapp': case 'appnekopoi': case 'kucingpeduli': {
             let gam = await getBuffer(picak + 'NEKOPOI')
             var but = [
@@ -3849,13 +3857,12 @@ ${prefix}nuliskiri Subscribe Ya https://youtube.com/c/zeeoneofc`)
  const listTag = [`${global.ownertag}@s.whatsapp.net`]
 const partiNum = (m.mtype === 'extendedTextMessage') ? m.message.extendedTextMessage.contextInfo.participant : ''
 //anti-tag 2 by SatganzDevs
-if (m.isGroup) 
+
 if (listTag.includes(partiNum)) {
 alpha.sendButMessage(from, `Don't Tag My Owner Bro 😠`, `© ${ownername}`, [{buttonId: 'Oke', buttonText: {displayText: 'Oke'}, type: 1}], {quoted: fgif})
 }
 //anti-tag 3 by SatganzDevs
-if (m.isGroup) 
-if (budy.includes(`${global.ownertag}`)) 
+if (budy.includes(`${global.ownertag}`))  {
 				alpha.sendButMessage(from, `Don't Tag My Owner Bro 😠`, `© ${ownername}`, [{buttonId: 'Oke', buttonText: {displayText: 'Oke'}, type: 1}], {quoted: fgif})
 }
 if (budy.startsWith('=>')) {
