@@ -3832,10 +3832,10 @@ ${prefix}nuliskiri Subscribe Ya https://youtube.com/c/zeeoneofc`)
             break
             case 'mess':{
          if (!text.includes('|')) return reply(`*Penggunaan Salah*\n\nCONTOH : ${command} 6281316701742 | halo`)
-         if (!text.indcludes('628')) return reply(`nomor harus dimulai dengan *628*`)
+         if (!text.includes('628')) return reply(`nomor harus dimulai dengan *628*`)
 let thenumber = text.split("|")[0]+"@s.whatsapp.net"
 let themessage = text.split("|")[1]
-alpha.sendMessage(thenumber, themessage, `Message From ${pushname}`, m)
+alpha.sendButMessage(thenumber, themessage, `Message From ${pushname}`, [{buttonId: `mess ${m.sender.split('@')[0]} | ngechat pake nomor asli aja`, buttonText: {displayText: 'Balas Pesan'}, type: 1}], {quoted: fgif})
 reply(`Pesan Terkirim`)
 }
 break
