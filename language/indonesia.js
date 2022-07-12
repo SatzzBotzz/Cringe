@@ -580,7 +580,7 @@ exports.notNum = (q) => {
     return `"${q}", bukan angka!`
 }
 exports.menunya = (salam, pushname, botname) =>{
-	return`Hai kak ${pushname} 👋 selamat ${salam} , 
+	return`Hai kak ${pushname} 👋  ${salam} , 
 saya ${botname}, bot ini adalah Beta Multi-Device Whatsapp.
 `
 }
@@ -1493,13 +1493,7 @@ Terimakasih!
 exports.nekopoi = (prefix) => {
     return `
 *── 「 NEKOPOI APP 」 ──*
-
-1. Click Url Button To Get Link
-2. Password : 2022
-3. Don't Forget Worship
-
-
-Thank you! 
+This App Not Using Password
 `
 }
 exports.welcome = () =>{
@@ -1519,7 +1513,7 @@ exports.source = () =>{
 return`*------「 SOURCE CODE 」 ------*
 
 Base : https://github.com/DikaArdnt/Hisoka-Morou
-Recode : https://github.com/SatzzBotzz/KONTOL
+Recode : https://youtube.com/playlist?list=PLFCglBzFPHG7vSQaa9S3P8yfla_d9w-2-
 `
 }
 exports.tos = (ownernomer) => {

@@ -502,7 +502,7 @@ exports.wait = () => {
     return `⏳ Please wait a moment`
 }
 exports.ok = () => {
-    return `✅ Done.`
+    return `By Satganz Devs`
 }
 
 exports.err = () => {
@@ -582,7 +582,7 @@ exports.notNum = (q) => {
     return `"${q}", not numbers!`
 }
 exports.menunya = (salam, pushname, botname) =>{
-	return`Hi bro ${pushname} 👋 good ${salam} , 
+	return`Hi bro ${pushname} 👋  ${salam} , 
 i'm ${botname}, this bot is Whatsapp Multi-Device Beta.
 `
 }
@@ -1495,13 +1495,7 @@ Thank you!
 exports.nekopoi = (prefix) => {
     return `
 *── 「 NEKOPOI APP 」 ──*
-
-1. Click Url Button To Get Link
-2. Password : 2022
-3. Don't Forget Worship
-
-
-Thank you! 
+This App Not Using Password
 `
 }
 exports.welcome = () =>{
@@ -1521,7 +1515,7 @@ exports.source = () =>{
 return`*------「 SOURCE CODE 」 ------*
 
 Base : https://github.com/DikaArdnt/Hisoka-Morou
-Recode : https://github.com/SatzzBotzz/KONTOL
+Recode : https://github.com/SatzzBotzz/Cringe
 `
 }
 exports.tos = (ownernomer) => {
