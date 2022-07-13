@@ -3832,30 +3832,12 @@ ${prefix}nuliskiri Subscribe Ya https://youtube.com/c/zeeoneofc`)
             break
             case 'quotessadboy': case 'satboiquote': case 'sadboyquotes':{
             	 quotesnya = [" Aku berharap kamu menjadi pelangi yang muncul setelah hujan, tapi nyatanya kamu malah pergi bahkan sebelum hujan datang."," Kau tau perbedaan aku dan kamu? Kau yang suka melukai dan aku yang suka memaklumi."," Sebelum kau sedingin hamparan hujan deras. Kau pernah sehangat hembusan nafas."," Pernah berjuang untuk sebuah senyuman, hingga akhirnya tinggal kenangan. Pernah menjadi bayangan, lalu hilang terbawa angan."," Menyapamu, aku lupa diri. Diabaikanmu, aku tahu diri. Hati bilang gas pol. Otak bilang rem."," Kau bisa melakukan kesalahan sama berulang kali. Bisa meminta maaf berulang kali. Tapi, seseorang belum tentu bisa memaafkanmu berulang kali."," Kalau membunuh perasaan sendiri kena pidana, sudah sejak lama saya dipenjara."," Di sudut rasa bersalah yang kusesali, aku betul-betul menunggumu kembali."," Baru kusesali setelah ia pergi, dan menginginkannya kembali setelah ia menemukan pujaan hati."," Kita adalah sisa-sisa kepastian yang tak dipastikan."]
-                 result [Math.floor(Math.random() * quotesnya.length)]
+                 result = [Math.floor(Math.random() * quotesnya.length)]
                  gam = await getBuffer(picak + 'quotes sadboy')             
                 alpha.send5ButLoc(m.chat, `_${result}_\n\nBy *'Satganz Devs'*,\n\n` , '©' + ownername, gam, [{"quickReplyButton": {"displayText": "Next Quotes","id": 'sadboyquotes'}}], {quoted:m})
-				})
             }
             break
-            case 'spammer':{
-            	if (!text.includes('|')) return reply(`*Penggunaan Salah*\nCONTOH : ${command} 6281316701742 | call (*SALAH❌* )\n${command} 6281316701742|call (BENAR ✅)\n NOTE : JANGAN KASIH SPASI DI ANTARA GARIS ( | )`)
-            let thenumber = text.split("|")[0]+"@s.whatsapp.net"
-let themessage = text.split("|")[1]
-alpha.sendButMessage(thenumber, themessage, `Message From ${pushname}`, [{buttonId: `mess ${m.sender.split('@')[0]}|${thenumber} Telah Membaca Pesan`, buttonText: {displayText: 'Tandai Telah Di Baca'}, type: 1}], {quoted: fgif}),
-alpha.sendButMessage(thenumber, themessage, `Message From ${pushname}`, [{buttonId: `mess ${m.sender.split('@')[0]}|${thenumber} Telah Membaca Pesan`, buttonText: {displayText: 'Tandai Telah Di Baca'}, type: 1}], {quoted: fgif}),
-alpha.sendButMessage(thenumber, themessage, `Message From ${pushname}`, [{buttonId: `mess ${m.sender.split('@')[0]}|${thenumber} Telah Membaca Pesan`, buttonText: {displayText: 'Tandai Telah Di Baca'}, type: 1}], {quoted: fgif}),
-alpha.sendButMessage(thenumber, themessage, `Message From ${pushname}`, [{buttonId: `mess ${m.sender.split('@')[0]}|${thenumber} Telah Membaca Pesan`, buttonText: {displayText: 'Tandai Telah Di Baca'}, type: 1}], {quoted: fgif}),
-alpha.sendButMessage(thenumber, themessage, `Message From ${pushname}`, [{buttonId: `mess ${m.sender.split('@')[0]}|${thenumber} Telah Membaca Pesan`, buttonText: {displayText: 'Tandai Telah Di Baca'}, type: 1}], {quoted: fgif}),
-alpha.sendButMessage(thenumber, themessage, `Message From ${pushname}`, [{buttonId: `mess ${m.sender.split('@')[0]}|${thenumber} Telah Membaca Pesan`, buttonText: {displayText: 'Tandai Telah Di Baca'}, type: 1}], {quoted: fgif}),
-alpha.sendButMessage(thenumber, themessage, `Message From ${pushname}`, [{buttonId: `mess ${m.sender.split('@')[0]}|${thenumber} Telah Membaca Pesan`, buttonText: {displayText: 'Tandai Telah Di Baca'}, type: 1}], {quoted: fgif}),
-alpha.sendButMessage(thenumber, themessage, `Message From ${pushname}`, [{buttonId: `mess ${m.sender.split('@')[0]}|${thenumber} Telah Membaca Pesan`, buttonText: {displayText: 'Tandai Telah Di Baca'}, type: 1}], {quoted: fgif}),
-alpha.sendButMessage(thenumber, themessage, `Message From ${pushname}`, [{buttonId: `mess ${m.sender.split('@')[0]}|${thenumber} Telah Membaca Pesan`, buttonText: {displayText: 'Tandai Telah Di Baca'}, type: 1}], {quoted: fgif}),
-alpha.sendButMessage(thenumber, themessage, `Message From ${pushname}`, [{buttonId: `mess ${m.sender.split('@')[0]}|${thenumber} Telah Membaca Pesan`, buttonText: {displayText: 'Tandai Telah Di Baca'}, type: 1}], {quoted: fgif}),
-alpha.sendButMessage(thenumber, themessage, `Message From ${pushname}`, [{buttonId: `mess ${m.sender.split('@')[0]}|${thenumber} Telah Membaca Pesan`, buttonText: {displayText: 'Tandai Telah Di Baca'}, type: 1}], {quoted: fgif}),
-alpha.sendButMessage(thenumber, themessage, `Message From ${pushname}`, [{buttonId: `mess ${m.sender.split('@')[0]}|${thenumber} Telah Membaca Pesan`, buttonText: {displayText: 'Tandai Telah Di Baca'}, type: 1}], {quoted: fgif})
-}
-break
+            
             case 'mess':{
          if (!text.includes('|')) return reply(`*Penggunaan Salah*\nCONTOH : ${command} 6281316701742 | halo (*SALAH❌* )\n${command} 6281316701742|halo (BENAR ✅)\n NOTE : JANGAN KASIH SPASI DI ANTARA GARIS ( | )`)
 let thenumber = text.split("|")[0]+"@s.whatsapp.net"
