@@ -3832,7 +3832,7 @@ ${prefix}nuliskiri Subscribe Ya https://youtube.com/c/zeeoneofc`)
             break
             case 'quotessadboy': case 'satboiquote': case 'sadboyquotes':{
             	 quotesnya = [" Aku berharap kamu menjadi pelangi yang muncul setelah hujan, tapi nyatanya kamu malah pergi bahkan sebelum hujan datang."," Kau tau perbedaan aku dan kamu? Kau yang suka melukai dan aku yang suka memaklumi."," Sebelum kau sedingin hamparan hujan deras. Kau pernah sehangat hembusan nafas."," Pernah berjuang untuk sebuah senyuman, hingga akhirnya tinggal kenangan. Pernah menjadi bayangan, lalu hilang terbawa angan."," Menyapamu, aku lupa diri. Diabaikanmu, aku tahu diri. Hati bilang gas pol. Otak bilang rem."," Kau bisa melakukan kesalahan sama berulang kali. Bisa meminta maaf berulang kali. Tapi, seseorang belum tentu bisa memaafkanmu berulang kali."," Kalau membunuh perasaan sendiri kena pidana, sudah sejak lama saya dipenjara."," Di sudut rasa bersalah yang kusesali, aku betul-betul menunggumu kembali."," Baru kusesali setelah ia pergi, dan menginginkannya kembali setelah ia menemukan pujaan hati."," Kita adalah sisa-sisa kepastian yang tak dipastikan."]
-                 result = [Math.floor(Math.random() * quotesnya.length)]
+                 result = quotesnya[Math.floor(Math.random() * quotesnya.length)]
                  gam = await getBuffer(picak + 'quotes sadboy')             
                 alpha.send5ButLoc(m.chat, `_${result}_\n\nBy *'Satganz Devs'*,\n\n` , '©' + ownername, gam, [{"quickReplyButton": {"displayText": "Next Quotes","id": 'sadboyquotes'}}], {quoted:m})
             }
