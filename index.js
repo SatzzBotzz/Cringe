@@ -3837,12 +3837,10 @@ ${prefix}nuliskiri Subscribe Ya https://youtube.com/c/zeeoneofc`)
                 alpha.send5ButLoc(m.chat, `_${result}_\n\nBy *'Satganz Devs'*,\n\n` , '©' + ownername, gam, [{"quickReplyButton": {"displayText": "Next Quotes","id": 'sadboyquotes'}}], {quoted:m})
             }
             break
-            
-            case 'mess':case 'chatto': case 'pesanke':{
+            case 'mess': case 'chatto': case 'pesanke':{
          if (!text.includes('|')) return reply(`*Penggunaan Salah*\nCONTOH : ${command} 6281316701742 | halo (*SALAH❌* )\n${command} 6281316701742|halo (BENAR ✅)\n NOTE : JANGAN KASIH SPASI DI ANTARA GARIS ( | )`)
 let thenumber = text.split("|")[0]+"@s.whatsapp.net"
 let themessage = text.split("|")[1]
-reply(`Mengirim Pesan Ke ${thenumber}`)
 alpha.sendButMessage(thenumber, themessage, `Message From ${pushname}`, [{buttonId: `abaca ${m.sender.split('@')[0]}|${thenumber} Telah Membaca Pesan`, buttonText: {displayText: 'Tandai Telah Di Baca'}, type: 1}], {quoted: fgif})
 reply(`Pesan Terkirim`)
 }
