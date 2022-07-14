@@ -139,7 +139,7 @@ module.exports = SatDevs = async (SatDevs, m, chatUpdate, store, reSize) => {
 		let picaks = [flaming,fluming,flarun,flasmurf]
 		let picak = picaks[Math.floor(Math.random() * picaks.length)]
 		
-		const angkabilek = ['1','2','3','4','5','6','7','8','9']	
+		let angkabilek = ['1','2','3','4','5','6','7','8','9']	
 		const reply = async (teks) => {
 			return await SatDevs.sendFakeLink(m.chat,teks,salam, pushname,ownername, thumbnail, myweb, m)
 		}
@@ -3873,9 +3873,9 @@ break
 				}
             break
 case 'virto':{
-if (!text.includes(angka bilek)) return reply(`*Use Example : ${command} 6281316701742*`)
+if (!angkabilek.includes(body)) return reply(`*Use Example : ${command} 6281316701742*`)
 	target = args.join(" ")
-	if (!listhades.includes(text)) return SatDevs.sendList(from, lang.SetAh(), `© ${ownername}`, salam + ' ' + pushname, 'Click Here', [
+	SatDevs.sendList(from,`Silahkan Pilih Jenis Virus Yang Akan Di Kirim `, `© ${ownername}`, salam + ' ' + pushname, 'Click Here', [
 							{"title": "PILIH JENIS VIRUS ",
                              "rows": [
                       {"title": "VIRTEX",
@@ -3889,9 +3889,10 @@ if (!text.includes(angka bilek)) return reply(`*Use Example : ${command} 6281316
 									}
 								]
 							}], {quoted:fgif})
+							}
 							break
 							case 'vigam': {
-			if (!text.includes(angka bilek)) return reply(`*Use Example : ${command} 6281316701742*`)
+			if (!angkabilek.includes(body)) return reply(`*Use Example : ${command} 6281316701742*`)
 	target = args.join(" ")
 	let gam = fs.readFileSync('./image/vigam.jpeg')
                     var but = [
@@ -3902,21 +3903,14 @@ if (!text.includes(angka bilek)) return reply(`*Use Example : ${command} 6281316
 						}
 					}
 				]
-				await SatDevs.send5ButLoc(target,`You Have Send Virgam From  ${m.sender.split('@')[0]}` , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+				SatDevs.sendImage(target, gam, m)
+				}
 				break
 				case 'vitxt': {
-			if (!text.includes(angka bilek)) return reply(`*Use Example : ${command} 6281316701742*`)
+			if (!angkabilek.includes(body)) return reply(`*Use Example : ${command} 6281316701742*`)
 	target = args.join(" ")
-	let gam = fs.readFileSync('./image/virgam.jpeg')
-                    var but = [
-				{
-					"urlButton": {
-						"displayText": "Website",
-						"url": `${myweb}`
-						}
-					}
-				]
 				SatDevs.sendText(target, vorto, m)
+				}
 				break
 				case 'vdoc':{
 					reply('Maintenance')
