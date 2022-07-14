@@ -3848,7 +3848,6 @@ break
 case 'baca':{
 let balsal = text.split("|")[0]+"@s.whatsapp.net"
 let tololol = text.split("|")[1]
-reply(`Mengirim Balasan Ke ${balsal}`)
 alpha.sendButMessage(balsal, tololol, `Message From ${pushname}`, [{buttonId: `oke`, buttonText: {displayText: 'oke'}, type: 1}], {quoted: fgif})
 reply(`Pesan Terkirim`)
 }
