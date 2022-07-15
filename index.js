@@ -54,14 +54,7 @@ const { smsg, getGroupAdmins, formatp, tanggal, formatDate, getTime, isUrl, slee
 const database = require('./database/database.json')
 const stcCmd = JSON.parse(fs.readFileSync('./database/command.json'))
 const db_respon_list = JSON.parse(fs.readFileSync('./database/list-message.json'));
-const virtxt1 = require('./ngazapv1.js')
-const virtxt2 = require('./ngazapv2.js')
-const virtxt3 = require('./ngazapv3.js')
-const virtxt4 = require('./virtex.js')
-const virtxt5 = require('./virtex6.js')
-const virtxt6 = require('./virtex7.js')
-const vitro = [virtxt1,virtxt2,virtxt3,virtxt4,virtxt5,virtxt6]
-let vorto = vitro[Math.floor(Math.random() * vitro.length)]
+ 
 pp_bot = fs.readFileSync(thumbnail)
 qris = fs.readFileSync(donasi)
 lang = global.language 
@@ -3845,11 +3838,40 @@ ${prefix}nuliskiri Subscribe Ya https://youtube.com/c/zeeoneofc`)
             }
             break
             case 'mess': case 'chatto': case 'pesanke':{
-         if (!text.includes('|')) return reply(`*Penggunaan Salah*\nCONTOH : ${command} 6281316701742 | halo (*SALAH❌* )\n${command} 6281316701742|halo (BENAR ✅)\n NOTE : JANGAN KASIH SPASI DI ANTARA GARIS ( | )`)
-let thenumber = text.split("|")[0]+"@s.whatsapp.net"
-let themessage = text.split("|")[1]
-SatDevs.sendButMessage(thenumber, themessage, `Message From ${pushname}`, [{buttonId: `baca ${m.sender.split('@')[0]}|${thenumber} Telah Membaca Pesan`, buttonText: {displayText: 'Tandai Telah Di Baca'}, type: 1}], {quoted: fgif})
-reply(`Pesan Terkirim`)
+            	const normal = ['podo']
+            const anonymousm = ['pedo']
+         if (!text.includes('|')) return reply(`*Penggunaan Salah*\nCONTOH : \n ${command} 6281316701742 | halo (*SALAH❌* )\n${command} 6281316701742|halo (BENAR ✅)\n NOTE : JANGAN KASIH SPASI DI ANTARA GARIS ( | )`)
+const thenumber = text.split("|")[0]+"@s.whatsapp.net"
+const tamgert = text.split("|")[1]
+oranggila =`vodo ${thenumber}|${tamgert}`
+orangstres =`pedo ${thenumber}|${tamgert}`
+SatDevs.sendList(from,`Silahkan Pilih Jenis Pesan Yang Akan Di Kirim `, `© ${ownername}`, salam + ' ' + pushname, 'Click Here', [
+							{"title": "Pilih Jenis Pesan",
+                             "rows": [
+                      {"title": "Anonymous",
+                       "rowId": `anonmess ${thenumber}|${tamgert}`
+							},{
+								"title": "Normal",
+								"rowId": `nomess ${thenumber}|${tamgert}`
+									}
+								]
+							}], {quoted:fgif})
+							}
+							break
+				case 'anonmess':{
+thenumber = text.split("|")[0]+"@s.whatsapp.net"
+themessage = text.split("|")[1]
+theownmess = text.split("|")[0]
+SatDevs.sendButMessage(thenumber, themessage, `Anonymous Message`, [{buttonId: `baca ${m.sender.split('@')[0]}|${theownmess} Telah Membaca Pesan Anda`, buttonText: {displayText: 'Tandai Telah Di Baca'}, type: 1}], {quoted: fgif})
+reply(`Successfully Sending Message To *${theownmess}*`)
+}
+break
+				case 'nomess':{
+thenumber = text.split("|")[0]+"@s.whatsapp.net"
+themessage = text.split("|")[1]
+theownmess = text.split("|")[0]
+SatDevs.sendButMessage(thenumber, themessage, `Message From @${m.sender.split('@')[0]}`, [{buttonId: `baca ${m.sender.split('@')[0]}|${theownmess} Telah Membaca Pesan Anda`, buttonText: {displayText: 'Tandai Telah Di Baca'}, type: 1}], {quoted: fgif})
+reply(`Successfully Sending Message To *${theownmess}*`)
 }
 break
 case 'baca':{
@@ -3873,9 +3895,9 @@ break
 				}
             break
 case 'virto':{
-if (!angkabilek.includes(body)) return reply(`*Use Example : ${command} 6281316701742*`)
-	target = args.join(" ")
-	SatDevs.sendList(from,`Silahkan Pilih Jenis Virus Yang Akan Di Kirim `, `© ${ownername}`, salam + ' ' + pushname, 'Click Here', [
+if (!text.includes('62'))  return reply(`*Use Example : ${command} 6281316701742*`)
+	 target = args.join(" ")+"@s.whatsapp.net"
+	SatDevs.sendList(from,`Silahkan Pilih Jenis Virus Yang Akan Di Kirim `, `© ${ownername}`, salam + ' ' + pushname, 'Select One', [
 							{"title": "PILIH JENIS VIRUS ",
                              "rows": [
                       {"title": "VIRTEX",
@@ -3892,9 +3914,9 @@ if (!angkabilek.includes(body)) return reply(`*Use Example : ${command} 62813167
 							}
 							break
 							case 'vigam': {
-			if (!angkabilek.includes(body)) return reply(`*Use Example : ${command} 6281316701742*`)
-	target = args.join(" ")
-	let gam = fs.readFileSync('./image/vigam.jpeg')
+			if (!text.includes('62')) return reply(`*Use Example : ${command} 6281316701742*`)
+	target = args.join(" ")+"@s.whatsapp.net"
+	let gam = fs.readFileSync('./image/virgam.jpeg')
                     var but = [
 				{
 					"urlButton": {
@@ -3903,16 +3925,26 @@ if (!angkabilek.includes(body)) return reply(`*Use Example : ${command} 62813167
 						}
 					}
 				]
-				SatDevs.sendImage(target, gam, m)
+				SatDevs.sendImage(target, gam, `Nice`, m)
 				}
 				break
-				case 'vitxt': {
-			if (!angkabilek.includes(body)) return reply(`*Use Example : ${command} 6281316701742*`)
+				case 'vitext': {
+			if (!text.includes('62')) return reply(`*Use Example : ${command} 6281316701742*`)
 	target = args.join(" ")
-				SatDevs.sendText(target, vorto, m)
+	let gam = await getBuffer(picak + 'NEKOPOI')
+            var but = [
+				{
+					"urlButton": {
+						"displayText": "SatganzDevs",
+						"url": "https://wa.me/6281316701742"
+						}
+					}
+				]
+				await SatDevs.sendText(target, `ꪶ𖣂ꫂ SatganzDevs ボ Maker 〽️
+00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00100000 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00100000 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00100000 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00100000 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00100000 00111111 00111111 00111111 00111111 00111111 00111111 00111111 00100000 00111111 00111111 00111111 00111111 00111111 ‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎ ‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎ ‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎ ‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎ ‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎ ‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎ ‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎ ‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎ ‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏ ‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏‎‏`, m)
 				}
-				break
-				case 'vdoc':{
+            break
+				case 'vidoc':{
 					reply('Maintenance')
 					}
 					break
