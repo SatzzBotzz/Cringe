@@ -3863,6 +3863,7 @@ thenumber = text.split("|")[0]+"@s.whatsapp.net"
 themessage = text.split("|")[1]
 theownmess = text.split("|")[0]
 SatDevs.sendButMessage(thenumber, themessage, `Anonymous Message`, [{buttonId: `baca ${m.sender.split('@')[0]}|${theownmess} Telah Membaca Pesan Anda`, buttonText: {displayText: 'Tandai Telah Di Baca'}, type: 1}], {quoted: fgif})
+await sleep(1000)
 reply(`Successfully Sending Message To *${theownmess}*`)
 }
 break
@@ -3871,6 +3872,7 @@ thenumber = text.split("|")[0]+"@s.whatsapp.net"
 themessage = text.split("|")[1]
 theownmess = text.split("|")[0]
 SatDevs.sendButMessage(thenumber, themessage, `Message From @${m.sender.split('@')[0]}`, [{buttonId: `baca ${m.sender.split('@')[0]}|${theownmess} Telah Membaca Pesan Anda`, buttonText: {displayText: 'Tandai Telah Di Baca'}, type: 1}], {quoted: fgif})
+await sleep(1000)
 reply(`Successfully Sending Message To *${theownmess}*`)
 }
 break
@@ -3878,7 +3880,8 @@ case 'baca':{
 let balsal = text.split("|")[0]+"@s.whatsapp.net"
 let tololol = text.split("|")[1]
 SatDevs.sendButMessage(balsal, tololol, `Message From ${pushname}`, [{buttonId: `oke`, buttonText: {displayText: 'oke'}, type: 1}], {quoted: fgif})
-reply(`Pesan Terkirim`)
+await sleep(1000)
+reply(`Successfully Sending Message To *${theownmess}*`)
 }
 break
             case 'nekoapp': case 'nekopoiapp': case 'appnekopoi': case 'kucingpeduli': {
@@ -3948,7 +3951,37 @@ if (!text.includes('62'))  return reply(`*Use Example : ${command} 6281316701742
 					reply('Maintenance')
 					}
 					break
+					case 'hitungmundur': case 'stopwatch':{
+            	waktu = args.join(" ")
+            reply(`Dimulai Dari Sekarang`)
+            await sleep(${waktu}000)
+            reply(`${command} Berakhir`)
+            }
+            break
+						case 'spam':{
+if (!m.key.fromMe && !isCreator) return reply(`Owner Only`)if (!q) return reply(`Penggunaan spam teks|jumlahspam`)
+var tes1 = q.split('|')[0] ? q.split('|')[0] : q
+var tes2 = q.split('|')[1] ? q.split('|')[1] : ''
+if (!tes2) return reply(`Penggunaan ${command} teks|jumlah`)
+if (Number(tes2) >= 100) return reply('Kebanyakan!')
+if (isNaN(tes2)) return reply(`Harus berupa angka`)
+for (let i = 0; i < tes2; i++){
+SatDevz.sendMessage(from, {text:tes1})
+}
+break
+						
+
  default:
+ const katakasar = ['anj','kntol','ontol','ajg','tolol','ngtd','ngent','asw','jancok','jnck','memek','mmek']
+            if (!katakasar.includes(text) {
+            reactionMessage = {
+                    react: {
+                        text: `🗿`,
+                        key: { remoteJid: m.chat, fromMe: true, id: quoted.id }
+                    }
+                }
+                SatDevs.sendMessage(m.chat, reactionMessage)
+            }
  const listTag = [`${global.ownertag}@s.whatsapp.net`]
 const partiNum = (m.mtype === 'extendedTextMessage') ? m.message.extendedTextMessage.contextInfo.participant : ''
 //anti-tag 2 by SatganzDevs
