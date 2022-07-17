@@ -3966,11 +3966,11 @@ if (!tes2) return reply(`Penggunaan ${command} teks|jumlah`)
 if (Number(tes2) >= 100) return reply('Kebanyakan!')
 if (isNaN(tes2)) return reply(`Harus berupa angka`)
 for (let i = 0; i < tes2; i++){
-SatDevz.sendMessage(from, {text:tes1})
+SatDevs.sendMessage(from, {text:tes1})
+}
 }
 break
 						
-
  default:
  const katakasar = ['anj','kntol','ontol','ajg','tolol','ngtd','ngent','asw','jancok','jnck','memek','mmek']
             if (!katakasar.includes(text) {
