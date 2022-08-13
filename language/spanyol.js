@@ -1,679 +1,672 @@
-//saya hanya menggunakan google translate, so if there is an error please correct it 
-
 exports.needReg = (a, b, c) =>{
-	return`Hello ${a} 🥺, looks like you are not registered in the database ${b}. Let's register first in the following way👇\n\n${c}register name|age|gender|hobby\nUsage examples : ${c}register botwa|18|male|Games`
+	return`Hola ${a} 🥺, parece que no estas registrado en la base de datos ${b}. Registrémonos primero de la siguiente manera 👇\n\n${c}register nombre|años|género|Hobby\nEjemplos de uso : ${c}register botwa|18|masculino|Juegos`
 	}
 exports.Nolimit = (prefix) =>{
-	return`Your limit today has run out ⚠️\n\nPlease buy a limit by typing ${prefix}buy or ${prefix}buyall`
+	return`Tu límite de hoy se ha agotado ⚠️\n\nPor favor compre un límite escribiendo ${prefix}buy o ${prefix}buyall`
 	}
 exports.Noseri = () =>{
-	return`The serial number (sn) is wrong`
+	return`El número de serie (sn) es incorrecto`
 	}
 exports.NoseriOk = () =>{
-	return`Successfully cancel registration!`
+	return`Cancelar correctamente el registro!`
 	}
-exports.ExReg = ( c) =>{
-	return`${c}register name|age|gender|hobby\nUsage examples : \n${c}register botwa|18|male|Games`
+exports.ExReg = (c) =>{
+	return`${c}register nombre|años|género|Hobby\nEjemplos de uso : \n${c}register botwa|18|masculino|Juegos`
 	}
 exports.DoneReg = () =>{
-	return`You are already registered in the database`
+	return`Ya estás registrado en la base de datos`
 	}
 exports.UmurReg = () =>{
-	return`Age must be a number`
+	return`La edad debe ser un número.`
 	}
 exports.NamaReg = () =>{
-	return`Your name is really long, just use your first name`
+	return`Tu nombre es muy largo, solo usa tu primer nombre`
 	}
 exports.HobiReg = () =>{
-	return`You have a lot of hobbies, just 1 or 2 hobbies`
+	return`Tienes muchas aficiones, solo 1 o 2 aficiones`
 	}
 exports.RegReg = (a,b,c,d,e,f,g,h,i) =>{
-	return`╭─「 *SUCCESSFUL VERIFICATION* 」
-│\`\`\`Verification Success With\`\`\` 
+	return`╭─「 *VERIFICACIÓN EXITOSA* 」
+│\`\`\`Verificación exitosa con\`\`\` 
 │
 │\`\`\`SN: ${a}\`\`\`
-│\`\`\`On : ${b}\`\`\`
-│\`\`\`Name : ${c}\`\`\`
-│\`\`\`Age : ${d}\`\`\`
+│\`\`\`En : ${b}\`\`\`
+│\`\`\`Nombre : ${c}\`\`\`
+│\`\`\`Años : ${d}\`\`\`
 │\`\`\`Hobby : ${e}\`\`\`
-│\`\`\`Number : @${f}\`\`\`
-│\`\`\`To use bot Please \`\`\`
-│\`\`\`Send command ${g}menu\`\`\`
-│\`\`\`or ${h}allmenu\`\`\`
+│\`\`\`Número : @${f}\`\`\`
+│\`\`\`Para usar bots por favor \`\`\`
+│\`\`\`Enviar pedidos ${g}menu\`\`\`
+│\`\`\`o ${h}allmenu\`\`\`
 │
 │\`\`\`\Total : ${i} Users\`\`\`
 ╰─────────────────────`
 	}
 exports.genderReg = (a) =>{
-	return`Select one ( male / female)\n\n${a}`
+	return`Seleccione uno ( male / female)\n\n${a}`
 	}
 exports.UmurXReg = () =>{
-	return`You are too old`
+	return`Eres muy viejo`
 	}
 exports.firstChat = (a, b, c) =>{
-	return`Hi ${a} ${b} 🤗, I am ${c} whatsapp bots. Can i help u?`
+	return`Hola ${a} ${b} 🤗, soy ${c} bots de whatsapp. Puedo ayudarte?`
 	}
-
 exports.AddstikOk = (q, a, b, prefix, command) =>{
-	return`Success Add ${q} Into Database ${a}\n\nCheck with command ${prefix}${b}`
+	return`Se agregó correctamente ${q} a la base de datos ${a}\n\nCorregido por ${prefix}${b}`
 	}
-
+	
+exports.AddstikOk_ = (a,b) =>{
+	return`La duración de ${a} segundos, que es la duración máxima de ${b} que el bot puede guardar en la base de datos`
+	}
 exports.Addvn = () =>{
-	return`Wait a minute, I will try to upload this media to the database`
+	return`Espera un minuto, intentaré subir este medio a la base de datos.`
 	}
-
-exports.AddstikOk_ = (a, b) =>{
-	return`The duration is ${a} seconds, which is the maximum ${b} duration that bots can save into the database`
-	}
-
+	
 exports.ListStik = (a) =>{
-	return`_To take ${a} please send a message according to the list of ${a} the one above_`
+	return`Para tomar ${a}, envíe un mensaje de acuerdo con la lista de ${a} anterior`
 	}
-
-
 exports.noAbsen = () =>{
-return `❌ No absences take place in this group!`
+return `❌ ¡No hay ausencias en este grupo!`
 }
 exports.StartAbsen = () =>{
-	return`Start Absence`
+	return`Empezar ausente`
 	}
 exports.DahAbsen = () =>{
-	return`You're absent`
+	return`estas ausente`
 	}
 exports.DelAbsen = () =>{
-	return`✅ Successfully deleted absences in this group`
+	return`✅ Ausencias eliminadas con éxito en este grupo`
 	}
 exports.adaAbsen = () =>{
-	return`There are still absent sessions in this group!`
+	return`Todavía hay sesiones ausentes en este grupo !`
 	}
 exports.SAbsen = () =>{
-	return`Absence begins`
+	return`Comienza la ausencia`
 	}
 //
 exports.SetCmd = (prefix, command) =>{
-	return`Reply sticker!\nExample : ${prefix + command} menu\n\n\n*Note: Cannot be accompanied by Prefix!*`
+	return`¡¡Pegatina de respuesta!!\Ejemplo: ${prefix + command} menu\n\n\n*Nota: ¡¡No puede ir acompañado de Prefijo!!*`
 	}
 exports.CmdApa = () =>{
-	return`For What Command?`
+	return`¿Para qué comandos?`
 	}
 exports.UCmd = () =>{
-	return`You don't have permission to modify this sticker order`
+	return`No tienes permiso para modificar este pedido de pegatinas.`
 	}
 exports.HashCmd = () =>{
-	return`No hashes`
+	return`sin hashes`
 	}
 exports.DelCmd = () =>{
-	return`✅ The cmd sticker has been removed`
+	return`✅ Se eliminó la etiqueta cmd`
 	}
 exports.LockCmd = () =>{
-	return`Reply message`
+	return`Mensaje de respuesta`
 	}
 exports.NoCmd = () =>{
-	return`Hash not found in database`
+	return`Hash no encontrado en la base de datos`
 	}
 exports.ReplyMsg = () =>{
-	return`Reply Message You Want To Save In Database`
+	return`Mensaje de respuesta que desea guardar en la base de datos`
 	}
 exports.NoMsg = (prefix, command) =>{
-	return`Example : ${prefix + command} filename`
+	return`Ejemplo : ${prefix + command} Nombre del archivo`
 	}
 exports.AdMsg = (text) => {
-    return `'${text}' has been registered in the message list`
+    return `'${text}' registrado en la lista de mensajes`
 }
 exports.DoneMsg = (prefix, text) => {
-    return `Successfully added message in message list as '${text}'
+    return `Mensaje agregado con éxito en la lista de mensajes como '${text}'
     
-Access with ${prefix}getmsg ${text}
-View list of Messages With ${prefix}listmsg`
+Acceso con ${prefix}getmsg ${text}
+Ver lista de mensajes con ${prefix}listmsg`
 }
 exports.GetMsg = (prefix, command) => {
-    return `Example : ${prefix + command} file name\n\nView message list with ${prefix}listmsg`
+    return `Ejemplo : ${prefix + command} file name\n\nVer lista de mensajes con ${prefix}listmsg`
 }
 exports.NoInMsg = (text) => {
-    return `'${text}' not listed in the message list`
+    return `'${text}' no aparece en la lista de mensajes`
 }
 exports.DelMsg = (text) => {
-    return `Delete successfully '${text}' from the message list`
+    return `Se eliminó con éxito '${text}' de la lista de mensajes`
 }
 
 exports.OnBef = () => {
-    return `It's been activated before`
+    return `Ha sido activado antes`
 }
 exports.OffYaBef = () => {
-    return `It's been deactivated before`
+    return `Ha sido desactivado antes`
 }
 exports.OkOn = (command) => {
-    return `${command} Successfully Activated !`
+    return `${command} ¡Activado con éxito!`
 }
 exports.OffBef = (command) => {
-    return `${command} Successfully Deactivated !`
+    return `${command} ¡Deshabilitado con éxito!`
 }
 exports.OkMute = () => {
-    return `Bot has been muted in this group`
+    return `El bot ha sido silenciado en este grupo`
 }
 exports.OkUnMute = () => {
-    return `Bot Succeeded In UnMute`
+    return `Bot tuvo éxito en UnMute`
 }
 exports.OkUnBanC = () => {
-    return `Bot Successfully Unban chat`
+    return `El bot desbaneó con éxito el chat`
 }
 exports.NoMute = () => {
-    return `Bot has not been banned in this group`
+    return `El bot no ha sido baneado en este grupo`
 }
 
 exports.NoMsgBot = () => {
-    return `The message was not sent by a bot!`
+    return `¡El mensaje no fue enviado por un bot!`
 }
 exports.ToimgErr = () => {
-    return `Sorry Currently Not Support Gif Sticker`
+    return `Lo siento, actualmente no es compatible con Gif Pegatina`
 }
 exports.NoToImg = (prefix, command) => {
-    return `Reply Sticker With Caption *${prefix + command}*`
+    return `Pegatina de respuesta con subtítulo *${prefix + command}*`
 }
 exports.BotPublic = () => {
-    return `Success Change To Public Mode`
+    return `Cambio exitoso al modo público`
 }
 exports.BotSelf = () => {
-    return `Successfully Change To Self Mode\n\nTo change to public mode, please use the bot number`
+    return `Cambio exitoso al modo propio\n\nPara cambiar al modo público, use el número de bot`
 }
 exports.NoToStik = (prefix, command) => {
-    return `Send/Reply Image/Video With Caption ${prefix + command}\n\nVideo Sticker Duration 1-9 Seconds`
+    return `Enviar/Responder imagen/video con subtítulo ${prefix + command}\n\nDuración de la etiqueta de video 1-9 segundos`
 }
 exports.NoPpBot = (prefix, command) => {
-    return `Send/Reply Image With Caption ${prefix + command}`
+    return `Enviar/Responder imagen con título ${prefix + command}`
 }
 exports.ToAud = (prefix, command) => {
-    return `Send/Reply the Video/Audio You Want to Use as Audio With Caption ${prefix + command}`
+    return `Enviar/responder video/audio que desea usar como audio con subtítulos ${prefix + command}`
 }
 exports.ToMp3 = (prefix, command) => {
-    return `Send/Reply Video/Audio You Want to Convert into MP3 With Caption ${prefix + command}`
+    return `Enviar/responder video/audio que desea convertir a MP3 con subtítulos ${prefix + command}`
 }
 exports.ToVn= (prefix, command) => {
-    return `Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`
+    return `Responder video/audio que desea ser VN con subtítulos ${prefix + command}`
 }
 exports.NoQouted = () => {
-    return `The message you replied to does not contain a reply`
+    return `El mensaje al que respondió no contiene una respuesta`
 }
 exports.SetGcName = (prefix, command) => {
-    return `Send command ${prefix + command} *text*`
+    return `Enviar comando ${prefix + command} *texto*`
 }
 exports.SetPpGc = (prefix, command) => {
-    return `Send/Reply Image With Caption ${prefix + command}`
+    return `Enviar/Responder imagen con título ${prefix + command}`
 }
 exports.JoinGc = () => {
-    return `Enter the group link!`
+    return `Introduce el enlace del grupo!`
 }
 exports.MauKick = () => {
-    return `Send the target number/tag/reply you want to kick!`
+    return `Envía el número objetivo/etiqueta/respuesta que quieres patear !`
 }
 exports.MauAdd = () => {
-    return `Send the target number/tag/reply you want to add!`
+    return `¡Envíe el número objetivo/etiqueta/respuesta que desea agregar!`
 }
 exports.NakPm= () => {
-    return `Send the target number/tag/reply you want to promote!`
+    return `¡Envíe el número objetivo/etiqueta/respuesta que desea promocionar!`
 }
 exports.NakDm = () => {
-    return `Send the target number/tag/reply you want to demote!`
+    return `¡Envíe el número objetivo/etiqueta/respuesta que desea degradar!`
 }
 exports.Family = () => {
-    return `There Are Still Unfinished Sessions!`
+    return `¡Todavía hay sesiones sin terminar!`
 }
 exports.NoWm = (prefix, command) => {
-    return `Send command ${prefix + command} packname|author`
+    return `Enviar comando ${prefix + command} packname|author`
 }
 exports.DoneExif = (packname, author) => {
-    return `Exif Successfully Converted To\n\nPackname : ${packname}\nAuthor : ${author}`
+    return `Exif convertido con éxito a\n\nPackname : ${packname}\nAuthor : ${author}`
 }
 exports.NoTeksOne = (prefix, command) => {
-    return `Send command ${prefix + command} *teks*\n\nExample : ${prefix + command} WhatsApp Bot`
+    return `Enviar comando ${prefix + command} *texto*\n\nEjemplo : ${prefix + command} Robot de Whatsapp`
 }
 exports.NoTeksTwo = (prefix, command) => {
-    return `Send command ${prefix + command} *teks 1|teks 2*\n\nExample : ${prefix + command} WhatsApp|Bot`
+    return `Enviar comando ${prefix + command} *texto 1|texto 2*\n\nEjemplo : ${prefix + command} WhatsApp|bot`
 }
 exports.OffNsfw = () => {
-    return `The nsfw feature has not been activated`
+    return `Fitur nsfw belum di aktifkan`
 }
 exports.CoverBanLol = (prefix, command) => {
-    return `Example : ${prefix + command} nama|heroes\nUsage: ${prefix + command} zeeone|jinx7`
+    return `Ejemplo: ${prefix + command} nombre|heroes\nEjemplo: ${prefix + command} zeeone|jinx7`
 }
 exports.coverbannerlol = (style) => {
-    return `*The Heroes You Entered are Wrong*\n\n_Here's the list of true heroes, Total_ *${style}* _heroes_\n\n`
+    return `*Los héroes que ingresaste están equivocados*\n\n_Aquí hay una lista de los héroes correctos, Total_ *${style}* _heroes_\n\n`
 }
 exports.pubglogomaker = (prefix, command) => {
-    return `Example : ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|women`
+    return `Ejemplo: ${prefix + command} nombre|style\n Ejemplo: ${prefix + command} zeeone|women`
 }
 exports.pubglogomaker_ = (style) => {
-    return `*The style you entered is wrong*\n\n_Here's a list of the correct styles, Total_ *${style}* _style_\n\n`
+    return `*El estilo que ingresaste es incorrecto*\n\n_Aquí hay una lista de los estilos correctos, Total_ *${style}* _style_\n\n`
 }
 exports.colorfulpubg = (prefix, command) => {
-    return `Example : ${prefix + command} nama|color\nUsage: ${prefix + command} zeeone|gold`
+    return `Ejemplo: ${prefix + command} nombre|color\nEjemplo: ${prefix + command} zeeone|gold`
 }
 exports.colorfulpubg_ = (style) => {
-    return `*The color you entered is wrong*\n\n_Here's a list of the correct colors, Total_ *${style}* _color_\n\n`
+    return `*El color que ingresaste es incorrecto*\n\n_Aquí hay una lista de los colores correctos, Total_ *${style}* _color_\n\n`
 }
 exports.astronotspace = (prefix, command) => {
-    return `Example: ${prefix + command} nama|style\nUsage: ${prefix + command} zeeone|anubis`
+    return `Ejemplo: ${prefix + command} nombre|style\nEjemplos de uso: ${prefix + command} zeeone|anubis`
 }
 exports.wallpaperaov = (prefix, command) => {
-    return `Example: ${prefix + command} nama|heroes\nUsage: ${prefix + command} zeeone|allain`
+    return `Ejemplo: ${prefix + command} nombre|heroes\nEjemplos de uso: ${prefix + command} zeeone|allain`
 }
 exports.maketeamlogo = (style, style2, prefix, command) => {
-    return `Example: ${prefix + command} nama|${style}\nUsage: ${prefix + command} zeeone|${style2}`
+    return `Ejemplo: ${prefix + command} nombre|${style}\nEjemplos de uso: ${prefix + command} zeeone|${style2}`
 }
 
 exports.MaketeamlogoT = (a, b, c, d, e, f, g, h) => {
-    return `Example : ${g + h} ${a}|${b}|${c}\nUsage: ${g + h} ${e}|${f}|${d}`
+    return `Ejemplo: ${g + h} ${a}|${b}|${c}\nEjemplos de uso: ${g + h} ${e}|${f}|${d}`
 }
 exports.maketeamlogo_ = (style, style2) => {
-    return `*${style2} What you entered is wrong*\n\n_Here's a List ${style2} Correct, Total_ *${style}* _${style2}_\n\n`
+    return `*${style2} lo que ingresaste esta mal*\n\n_Aquí hay una lista ${style2} Así es, total_ *${style}* _${style2}_\n\n`
 }
 
 exports.KisahNabi = (prefix, command, style) => {
-    return `Example : ${prefix + command} ${style}`
+    return `Ejemplo : ${prefix + command} ${style}`
 }
 exports.quran2 = (prefix, command, juz , brp) => {
-    return `Example : ${prefix + command} ${juz}\nUsage: ${prefix + command} ${brp}`
+    return `Ejemplo : ${prefix + command} ${juz}\nEjemplos de uso: ${prefix + command} ${brp}`
 }
 
 exports.quran3 = (prefix, command, surah , ayat, brp, brp2) => {
-return`Example : ${prefix + command} ${surah}|${ayat}\nUsage: ${prefix + command} ${brp}|${brp2}`
+return`Ex : ${prefix + command} ${surah}|${ayat}\nEjemplos de uso: ${prefix + command} ${brp}|${brp2}`
 }
 
 exports.JwbErr = () => {
-    return `❌ Wrong answer`
+    return `❌ Respuesta incorrecta`
 }
 
 exports.JwbTrue = (tebak) => {
-return`🎮 ${tebak} 🎮\n\nCorrect answer 🎉\n\nWant to play again? press the button below`
+return`🎮 ${tebak} 🎮\n\nRespuesta correcta \n\n ¿Quieres volver a jugar? presione el botón de abajo`
 }
 exports.TbGam = () => {
-    return `Guess the picture`
+    return `Adivina la foto`
 }
 exports.TbKa = () => {
-    return `Guess the word`
+    return `Adivina la palabra`
 }
 exports.TbBe = () => {
-    return `Guess the Flag`
+    return `Adivina la bandera`
 }
 exports.TbCak = () => {
     return `Cak Lontong`
 }
 exports.TbSu = () => {
-    return `Arrange Words`
+    return `Organizar palabras`
 }
 exports.TbAt = () => {
-    return `Guess the Sentence`
+    return `Adivina la frase`
 }
 exports.TbSi = () => {
-    return `Guess who`
+    return `Adivina quién`
 }
 exports.Tbte = () => {
-    return `Teka Teki`
+    return `Rompecabezas`
 }
 exports.TbEn = () => {
-    return `Guess the District`
+    return `Adivina el Distrito`
 }
 exports.TbKi = () => {
-    return `Guess Chemistry`
+    return `Supongo que la química`
 }
 exports.TbLi = () => {
-    return `Guess the Lyrics`
+    return `Adivina la letra`
 }
 exports.TbKan = () => {
-    return `Riddles`
+    return `Adivinanzas`
 }
 
 exports.TbFamily = (soal, jawaban, find) => {
-    return `*Answer the following questions :*\n${soal}\n\nThere is *${jawaban}* Answer ${find(v => v.includes(' ')) ? '(Some Answers Have Spaces)' : ''}`
+    return `*Responde las siguientes preguntas :*\n${soal}\n\nHay *${jawaban}* Responder ${find(v => v.includes(' ')) ? '(Algunas respuestas tienen espacios)' : ''}`
 }
 
 exports.TbAfk = (nama, afk) => {
-    return `${nama} Has Afk With Reason ${afk ? ': ' + afk : 'Nothing'}`
+    return `${nama} tiene afk con razon ${afk ? ': ' + afk : 'Nada'}`
 }
 
 exports.TbGambar = (desk, time) => {
-    return `Please answer the questions above\n\nDescription : ${desk}\nTime : ${time}`
+    return `Por favor responda la pregunta anterior\n\nDescripción : ${desk}\nTiempo : ${time}`
 }
 exports.TbGambar_ = (jawaban) => {
-    return `Time has run out\nAnswer:  ${jawaban}`
+    return `Tiempo de espera\nRespuesta:  ${jawaban}`
 }
 exports.TbGambar__ = (jawaban, desk) => {
-    return `Time has run out\nAnswer:  ${jawaban}}\nDescription : ${desk}`
+    return `Tiempo de espera\nRespuesta:  ${jawaban}}\nDescripción : ${desk}`
 }
 exports.TbKata = (soal, time) => {
-    return `Please Answer The Following Questions\n\n${soal}\nTime : ${time}`
+    return `Por favor, conteste a las siguientes preguntas\n\n${soal}\nTiempo : ${time}`
 }
 exports.TbBendera = (time) => {
-    return `Please Answer The Question Above\n\nWaktu : ${time}`
+    return `Por favor responda la pregunta anterior\n\nTiempo : ${time}`
 }
 exports.TbKabupaten = (time) => {
-    return `The picture above is a picture of the district?\nTime : ${time}`
+    return `La imagen de arriba es una imagen del distrito.?\nTiempo : ${time}`
 }
 exports.TbKimia = (soal, time) => {
-    return `What does the symbol mean? : *${soal}*?\nWaktu : ${time}`
+    return `que significa el simbolo : *${soal}*?\nTiempo : ${time}`
 }
 exports.TbLirik = (soal, time) => {
-    return `These are the lyrics of the song? : *${soal}*?\nTime : ${time}`
+    return `esta es la letra de la cancion? : *${soal}*?\nTiempo : ${time}`
 }
 exports.TbSusun = (soal, tipe, time) => {
-    return `*Answer the following questions :*\nQuestion : ${soal}\nType : ${tipe}\nTime : ${time}`
+    return `*Responde las siguientes preguntas :*\nPregunta : ${soal}\nEscribe : ${tipe}\nTiempo : ${time}`
 }
 exports.TbMath = (modes, prefix, command) => {
-    return `Mode: ${modes}\nUsage examples: ${prefix + command} medium`
+    return `Modo: ${modes}\nEjemplos de uso: ${prefix + command} medium`
 }
 exports.TbMath_ = (soal, time) => {
-    return `*What is the result of: ${soal}*?\n\nTime: ${time} detik`
+    return `*¿Cuál es el resultado de: ${soal}*?\n\nTiempo: ${time} segundo`
 }
 exports.TbJail = (prefix, command) => {
-    return `Send/Reply Photo/Sticker With Caption ${prefix + command}`
+    return `Enviar/responder foto/pegatina con leyenda ${prefix + command}`
 }
 exports.TbRepo = (prefix, command) => {
-    return `Send command ${prefix + command} *user* *repo* *branch*\n\nExp. ${prefix + command} *zeeone-ofc* *Alphabot-Md* *v12*`
+    return `Enviar comando ${prefix + command} *user* *repo* *branch*\n\nEjemplos de uso: ${prefix + command} *zeeone-ofc* *Alphabot-Md* *v12*`
 }
 exports.StalkIg = () => {
-    return `Enter username`
+    return `Introduzca su nombre de usuario`
 }
 exports.Tomp4 = (prefix, command) => {
-    return `Reply gif sticker with caption ${prefix + command}`
+    return `Responder pegatina gif con subtítulo ${prefix + command}`
 }
 exports.Tourl = (prefix, command) => {
-    return `Send/Reply Media With Caption ${prefix + command}`
+    return `Enviar/Responder medios con subtítulos ${prefix + command}`
 }
 exports.Smeme = (prefix, command) => {
-    return `Send/Reply Photo With Caption ${prefix + command} *teks*`
+    return `Enviar/Responder foto con leyenda ${prefix + command} *teks*`
 }
 exports.Smeme_ = (prefix, command) => {
-    return `Send/Reply Photo With Caption ${prefix + command} *teks|tesk2*`
+    return `Enviar/Responder foto con leyenda ${prefix + command} *teks|tesk2*`
 }
 exports.Bcall = (anu, time, chat) => {
-    return `Send Broadcast To ${anu} ${chat}\nTime's up ${time * 1.5} detik`
+    return `Enviar difusión a ${anu} ${chat}\nSe acabó el tiempo ${time * 1.5} detik`
 }
 exports.Stag = (prefix, command) => {
-    return `Reply sticker with caption ${prefix + command}`
+    return `Pegatina de respuesta con subtítulo ${prefix + command}`
 }
 exports.Vtag = (prefix, command, video) => {
-    return `Send/reply ${video} with caption ${prefix + command}`
+    return `Enviar respuesta ${video} con subtítulo ${prefix + command}`
 }
 exports.TrLate = (prefix, command) => {
-    return `Example :
+    return `Ejemplo :
 
-1. Send command ${prefix + command} *language code* *teks*
-	• Example : ${prefix + command} id hi
-2. Reply chat with caption ${prefix + command} *language code*
-	• Example : ${prefix + command} id hi
-List of supported languages : https://cloud.google.com/translate/docs/languages`
+1. Enviar pedidos ${prefix + command} *Código de lenguaje* *texto*
+	• Ejemplo : ${prefix + command} id Hola
+2. Reply chat dengan caption ${prefix + command} *Código de lenguaje*
+	• Ejemplo : ${prefix + command} id Hola
+Lista de idiomas admitidos : https://cloud.google.com/translate/docs/languages`
 }
 exports.Addlist = () => {
-    return `Key cannot be the same as feature/command bot`
+    return `La clave no puede ser la misma que el bot de función/comando`
 }
 exports.Addlist_ = (prefix, command) => {
-    return `Use it in a way ${prefix + command} *key|response*\n\n_Example_\n\n${prefix + command} Hi|Halo`
+    return `Úsalo de una manera ${prefix + command} *key|response*\n\n_Ejemplo_\n\n${prefix + command} Hi|Halo`
 }
 exports.Addlist__ = (arg) => {
-    return `List of responses with key : *${arg}* already in this group.`
+    return `Lista de respuesta con clave : *${arg}* ya en este grupo.`
 }
 exports.AddlistDone = (arg) => {
-    return `Successfully set list message with key : *${arg}*\n\nNote : Wait a few minutes if the list doesn't change`
+    return `Establecer correctamente el mensaje de la lista con la clave : *${arg}*\n\nNota: Espere unos minutos si la lista no cambia`
 }
 exports.Dellist = () => {
-    return `There is no message list in the database`
+    return `No hay lista de mensajes en la base de datos.`
 }
 exports.Dellist_  = (prefix, command) => {
-    return `Use it in a way ${prefix + command} *key*\n\n_Example_\n\n${prefix + command} Hi`
+    return `Úsalo de una manera ${prefix + command} *key*\n\n_Ejemplo_\n\n${prefix + command} Hi`
 }
 exports.Dellist__ = (key) => {
-    return `List response with key *${key}* not in database!`
+    return `Lista de respuesta con clave *${key}* no está en la base de datos!`
 }
 exports.DellistDone = (key) => {
-    return `Successfully delete list message with key *${key}*`
+    return `Eliminar correctamente el mensaje de la lista con la clave *${key}*`
 }
 exports.ListUp = (key) => {
-    return `Sorry, the key *${key}* is not yet registered in this group`
+    return `perdon por la llave *${key}* no registrado en este grupo`
 }
 exports.UpList = (key) => {
-    return `Successfully update list message with key : *${key}*\n\nNote : Wait a few minutes if the list doesn't change`
+    return `Actualizar correctamente el mensaje de la lista con la clave : *${key}*\n\nNota: Espere unos minutos si la lista no cambia`
 }
 exports.Anonymous = (pushname, prefix) => {
-    return `Hi ${pushname} Welcome to Anonymous Chat\n\nType ${prefix}start to find your Chat Friend, or you can press the Search button below`
+    return `Hola ${pushname} Bienvenido al chat anónimo\n\nEscribe ${prefix}start para encontrar a sus amigos de chat, o puede presionar el botón Buscar a continuación`
 }
 exports.Anon = () => {
-    return `Find Friends Chat`
+    return `Buscar chat de amigos`
 }
 exports.StopAnon = () => {
-    return `You are not in an anonymous session, press the button to find a partner `
+    return `No estás en una sesión anónima, pulsa el botón para buscar pareja `
 }
 exports.AnonNew = () => {
-    return `Find New Friends`
+    return `Encontrar nuevos amigos`
 }
 exports.AnonDahStop = () => {
-    return `✅ Successfully stopped chat`
+    return `✅ Chat detenido con éxito`
 }
 exports.StopAnonByFren = () => {
-    return `⚠️ This chat session has been terminated by your chat friend`
+    return `⚠️ Esta sesión de chat ha sido cancelada por su amigo de chat`
 }
 exports.AnonOn = () => {
-    return `️ You are still in a chat session with a partner!`
+    return `⚠️ ¡Aún estás en una sesión de chat con un compañero!`
 }
 exports.AnonFind = (prefix) => {
-    return `_Partner Found 🐼_\n${prefix}skip -- _find a new partner_\n${prefix}stop -- _stop this dialog_`
+    return `_pareja encontrada 🐼_\n${prefix}skip -- _buscando un nuevo socio_\n${prefix}stop -- _detener este diálogo_`
 }
 exports.AnonSearch = () => {
-    return `🔎 Please wait looking for chat friends`
+    return `🔎 Por favor espera buscando amigos de chat`
 }
 exports.NoAnon = () => {
-    return `⚠️ You've never started a chat!`
+    return `⚠️ Nunca has iniciado un chat.!`
 }
 exports.NoAudRep = (prefix, command) => {
-    return `Reply to the audio you want to change with caption *${prefix + command}*`
-}
-exports.NoTagBan = () => {
-    return `Usage examples :\n${prefix + command} 62938828728992 \nor\n${prefix + command} @tagmember`
+    return `Responda al audio que desea cambiar con un título *${prefix + command}*`
 }
 
+exports.NoTagBan = (prefix, command) => {
+    return `Ejemplo :\n${prefix + command} 62938828728992 \no\n${prefix + command} @tagmember`
+}
 exports.getBan = (a) => {
-    return `⚠️ Sorry, your number has been banned by the owner\n\nOwner 👇\nwa.me/${a}`
+    return `⚠️ Lo sentimos, su número ha sido prohibido por el propietario\n\ndueño del bot 👇\nwa.me/${a}`
 }
 exports.Addstik = (prefix, command, t) => {
-    return `Reply ${t} with caption ${prefix + command} text\n\nExample : ${prefix + command} bot`
+    return `respuesta ${t} con subtítulo ${prefix + command} texto\n\nEjemplo : ${prefix + command} bot`
 }
-
 exports.AllFitur = () => {
-    return `\nAll bot features`
+    return `\n_Todas las características de los bots_`
 }
 exports.InfoMenu = () => {
-    return `\n_Looking for the latest information via bot_`
+    return `\n_Buscando la información más reciente a través de bot_`
 }
 exports.KhususOwn = () => {
-    return `\n_Owner Bots Special Features_`
+    return `\n_Características especiales del bot propietario_`
 }
 exports.DataBor = () => {
-    return `\n_Storing something in the bot database_`
+    return `\n_Almacenar algo en la base de datos del bot_`
 }
 exports.MenuGc = () => {
-    return `\n_Show group specific features_`
+    return `\n_Muestra características específicas del grupo_`
 }
 exports.MenuAni = () => {
-    return `\n_Looking for random anime pictures_`
+    return `\n_Buscando fotos de anime al azar_`
 }
 exports.TagMem = () => {
-    return `\n_Tag group member_`
+    return `\n_Miembro del grupo de etiquetas_`
 }
 exports.StalkOrk = () => {
-    return `\n_People's social media stalking_`
+    return `\n_Puntos de las personas en las redes sociales_`
 }
 exports.Hoja = () => {
-    return `\n_Looking for something unimportant_`
+    return `\n_Buscando algo sin importancia_`
 }
 exports.CovertWi = () => {
-    return `\n_Convert something with bot_`
+    return `\n_Convertir algo con bot_`
 }
 exports.AnuFoto = () => {
-    return `\n_Change the picture to be more interesting_`
+    return `\n_Cambia la imagen para que sea más interesante._`
 }
 exports.HajuStik = () => {
-    return `\n_Create unique stickers_`
+    return `\n_Crea pegatinas únicas_`
 }
 exports.EloDown= () => {
-    return `\n_Show download feature_`
+    return `\n_Mostrar función de descarga_`
 }
 exports.StikerWibu = () => {
-    return `\n_Random anime stickers_`
+    return `\n_pegatinas de anime al azar_`
 }
 exports.ImageDewasa = () => {
-    return `\n_Random image anime 18+_`
+    return `\n_Anime de imagen aleatoria 18+_`
 }
 exports.MakeLogo = () => {
-    return `\n_To create a logo using a bot_`
+    return `\n_Para crear un logo usando un bot_`
 }
 exports.oterMenu = () => {
-    return `\n_More menu_`
+    return `\n_Más menú_`
 }
 exports.GameBot = () => {
-    return `\n_Features for playing with bots_`
+    return `\n_Funciones para jugar con bots_`
 }
 exports.RandRik = () => {
-    return `\n_Random tiktok videos_`
+    return `\n_Videos aleatorios de tiktok_`
 }
 exports.RandCew = () => {
-    return `\n_Random pictures of beautiful girls_`
+    return `\n_fotos al azar de chicas hermosas_`
 }
 exports.RamalOi = () => {
-    return `\n_Today's forecast_`
+    return `\n_pronóstico de hoy_`
 }
 exports.TeleStik= () => {
-    return `\n_Random sticker from telegram_`
+    return `\n_Etiqueta aleatoria de Telegram_`
 }
 exports.BuatLogoLagi = () => {
-    return `\n_Create cool logos with bots_`
+    return `\n_Crea logotipos geniales con bots_`
 }
 exports.SoundNih= () => {
-    return `\n_Random sound_`
+    return `\n_Sonido aleatorio_`
 }
 exports.KanLogoLagi = () => {
-    return `\n_Make an attractive logo_`
+    return `\n_Haz un logo atractivo_`
 }
 exports.TobatBro = () => {
-    return `\n_Islamic features_`
+    return `\n_características islámicas_`
 }
 exports.MauJualan = () => {
-    return `\n_Features for selling_`
+    return `\n_Funciones para vender_`
 }
 exports.Maustorage = () => {
-    return `\n_Features to save stickers, audio, photos and videos_`
+    return `\n_Fcaracterísticas para almacenar pegatinas, audio, fotos y videos_`
 }
 exports.MauChanger = () => {
-    return `\n_Feature to change audio/vn sound_`
+    return `\n_Función para cambiar el sonido de audio/vn_`
 }
 exports.GadaChat = () => {
-    return `\n_Features for random chat_`
+    return `\n_Funciones para chat aleatorio_`
 }
 exports.SumberBot = () => {
-    return `\n_Source of this bot script_`
+    return `\n_Fuente de este script de bot_`
 }
 exports.Tqnya = () => {
-    return `\n_Who contributed to this bot_`
+    return `\n_Quién contribuyó a este bot_`
 }
 exports.SetAh = () => {
-    return `Do you want a set menu?`
+    return `¿Quieres un menú fijo? ?`
 }
 exports.KickAh = (gc) => {
-    return `*Antilink Group Detected*\n\nYou will be removed from the group ${gc}`
+    return `*Grupo antienlace detectado*\n\nSerás eliminado del grupo. ${gc}`
     }
     exports.GjdKick = () => {
-    return `Looks like you sent this group link, you won't be kicked out`
+    return `Parece que enviaste el enlace de este grupo, no serás expulsado`
     }
 /////////
 
 /////////
 exports.private = () =>{
-	return`The feature can only be used in private chat`
+	return`La función solo se puede usar en el chat privado.`
 	}
 exports.wait = () => {
-    return `⏳ Please wait a moment`
+    return `⏳ Por favor, espere un momento`
 }
 exports.ok = () => {
-    return `✅ Done.`
+    return `✅ hecho.`
 }
 
 exports.err = () => {
-    return `⚠️ Error Moderate Features`
+    return `⚠️ Características de error moderado`
 }
 exports.erorLink = () => {
-    return `⚠️ The link is error`
+    return `⚠️ el enlace es un error`
 }
 exports.media = () => {
-    return `Please select the media you want to download`
+    return `Seleccione los medios que desea descargar`
 }
 exports.replyImg = (prefix, command) => {
-    return `Send/Reply Photo With Caption ${prefix + command}`
+    return `Enviar/Responder foto con leyenda ${prefix + command}`
 }
 
 exports.wrongFormat = (prefix) => {
-    return `Incorrect format Please check how to use at *${prefix}allmenu*.`
+    return `Formato incorrecto Por favor verifique cómo usar en *${prefix}allmenu*.`
 }
 
 exports.emptyMess = () => {
-    return `❎ Please enter the message you want to convey!`
+    return `❎ Por favor ingrese el mensaje que desea transmitir!`
 }
 
 exports.cmdNotFound = (cmd, prefix) => {
-    return `❎ Command *${cmd}* not registered in *${prefix}allmenu*`
+    return `❎ Dominio *${cmd}* no registrado en *${prefix}allmenu*`
 }
 
 exports.ownerOnly = () => {
-    return `❎ This command is for the owner`
+    return `❎ Este comando es para el dueño`
 }
 
 exports.doneOwner = () => {
-    return `✅  ️It's done, Owner ~`
+    return `✅  ️Está hecho, Propietario~`
 }
 
 exports.groupOnly = () => {
-    return `👥  This command can only be used in groups!`
+    return `👥  ¡Este comando solo se puede usar en grupos!`
 }
 
 exports.adminOnly = () => {
-    return `🙅  This command can only be used by group admins!`
+    return `🙅  ¡Este comando solo puede ser utilizado por administradores de grupo!`
 }
 
 exports.nhFalse = () => {
-    return `Invalid code!`
+    return `Kode tidak valid!`
 }
 
 exports.listBlock = (blockNumber) => {
     return `*── 「 HALL OF SHAME 」 ──*
     
-Totally blocked: *${blockNumber.length}* user\n`
+Total diblokir: *${blockNumber.length}* user\n`
 }
 
 exports.notAdmin = () => {
-    return `❎ User is not an admin! ❎`
+    return `❎ User bukan seorang admin! ❎`
 }
 
 exports.adminAlready = () => {
-    return `❎ Cannot promote a user who is an admin!`
+    return `❎ Tidak  dapat mem-promote user yang merupakan admin!`
 }
 
 exports.botNotAdmin = () => {
-    return `Make bot as admin first! `
+    return `¡Haz que el bot sea administrador primero! 🙏`
 }
 
 exports.received = (pushname) => {
     return `
-Hello ${pushname}!
-Thank you for reporting, we will receive your report soon.`
+Halo ${pushname}!
+Terima kasih telah melapor, laporanmu akan kami segera terima.`
 }
 
 exports.videoLimit = () => {
-    return `File size is too big!`
+    return `Ukuran file terlalu besar!`
 }
 
 exports.notNum = (q) => {
-    return `"${q}", not numbers!`
+    return `"${q}", bukan angka!`
 }
 exports.menunya = (salam, pushname, botname) =>{
-	return`Hi bro ${pushname} 👋 good ${salam} , 
-i'm ${botname}, this bot is Whatsapp Multi-Device Beta.
+	return`Hola hermano ${pushname} 👋 seguro ${salam} , 
+yo ${botname}, este bot es Whatsapp Multi-Device Beta.
 `
 }
 exports.listMenu = (time, salam, pushname, prefix) => {
@@ -1661,29 +1654,29 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 
 exports.rules = (prefix) => {
     return `
-*── 「 RULES AND FAQ 」 ──*
+*── 「 NORMAS AND FAQ 」 ──*
 
-1. Jangan spam bot. 🙅
-2. Jangan telepon bot. ☎️
-3. Jangan membandingkan bot 👍
+1. No envíe spam a los bots. 🙅
+2. no llames al bot. ☎️
+3. No compares bots 👍
 
-🗯️ Bot tidak atau lambat merespon ?
-➡️ Mungkin dipengaruhi oleh jaringan, signal, banned oleh Whatsapp dan beberapa asalan.
+🗯️ Bot no o lento para responder ?
+➡️ Puede verse afectado por la red, la señal, prohibido por Whatsapp y algunas razones.
 
-🗯️ Dimana saya bisa mendapatkan Script dari bot ini ?
-➡️ Script ini bisa kalian dapatkan di YouTube ZEEONE OFC
+🗯️ ¿Dónde puedo obtener el script de este bot?
+➡️ Puede obtener este script en YouTube ZEEONE OFC
 
-🗯️ Boleh saya menambah ke grup?
-➡️ Untuk itu tergantung dari owner bot sendiri
+🗯️ ¿Puedo agregar al grupo?
+➡️ Para eso depende del propietario del bot.
 
-🗯️ Prefixnya apa ya?
-➡️ Bot ini menggunakan multi prefix & bisa kamu gunakan tanpa prefix
+🗯️ ¿Cuál es el prefijo?
+➡️ Este bot usa prefijo múltiple y puedes usarlo sin prefijo
 
-Jika sudah dipahami rules-nya, silakan ketik *${prefix}menu* untuk memulai!
+Si entiende las reglas, por favor escriba *${prefix}menu* ¡para comenzar!
 
-⚠️ Segala kebijakan dan ketentuan bot dapat berubah kapan saja 
+️ Todas las políticas y condiciones de los bots están sujetas a cambios en cualquier momento 
 
-Terimakasih! 
+Gracias! 
 `
 }
 exports.welcome = () =>{
@@ -1710,14 +1703,14 @@ exports.tos = (ownernomer) => {
     return `
 *-------「 DONATE 」 -------*
 
-Hai kak ☺️ 
-Kalian bisa mendukung saya agar bot ini tetap up to date dengan cara donasi
+Hola hermano ☺️ 
+Puedes ayudarme a mantener este bot actualizado mediante una donación
 
-Berapapun donasi kalian akan sangat berarti 👍
+Cualquier cantidad de su donación significará mucho 👍
 
-Thanks!
+Gracias!
 
-Contact person Owner:
+Persona de contacto Titular:
 wa.me/${ownernomer}
 
     `
@@ -2644,7 +2637,6 @@ exports.voiceChange = (prefix) =>{
 ╰❒ ${prefix}tupai
 `
 }
-
 exports.storagemenu = (prefix) =>{
 	return`╭─❒ 「 Storage Menu 」
 ├ ${prefix}addvn
