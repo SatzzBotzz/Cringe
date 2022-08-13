@@ -1,7 +1,8 @@
 #!/usr/bin/bash
 
-pkg install imagemagick git nodejs ffmpeg libwebp mc nano
-git clone https://github.com/ZeeoneOfficial/node_modules
+pkg install imagemagick git nodejs ffmpeg libwebp mc nano yarn
+rm -rf node_modules 
+yarn
 rm -rf session.json 
 rm -rf store.json
 npm start
